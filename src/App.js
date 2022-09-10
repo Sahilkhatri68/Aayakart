@@ -20,6 +20,8 @@ import Wishlist from "./components/Wishlist";
 import Error404 from "./components/Error404";
 import Myaccount from "./components/Myaccount";
 import Contactus from "./components/Contactus";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
       {/* <Error404 /> */}
       {/* <Myaccount /> */}
       {/* <Contactus /> */}
+      {/* <Login /> */}
+      {/* <Register /> */}
     </div>
   );
 }
