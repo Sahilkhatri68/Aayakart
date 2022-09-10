@@ -1,0 +1,29 @@
+.masterdiv {
+    max-width: 1650px !important;
+    margin: auto;
+}
+
+.insidecont {
+    padding: 30px;
+}
+
+.insideitem {
+    width: 90%;
+    margin: auto;
+}
+
+.popitem {
+    /* padding: 30px; */
+    width: 80%;
+    margin: auto;
+}
+
+.banitem {
+    width: 80%;
+    margin: auto;
+}
+
+.newarr {
+    width: 80%;
+    margin: auto;
+}
