@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+
 import { motion } from "framer-motion"
 import Footer from './Footer'
 import Mainheader from './Mainheader'
@@ -27,6 +29,8 @@ import df10 from "./../assets/images/products/default/8.jpg"
 import sp1 from "./../assets/images/shop/16.jpg"
 import sp2 from "./../assets/images/shop/17.jpg"
 import sp3 from "./../assets/images/shop/18.jpg"
+import axios from "axios";
+
 export default function Product() {
     const scrollToTop = () => {
         window.scrollTo({
@@ -37,6 +41,50 @@ export default function Product() {
     useEffect(() => {
         scrollToTop();
     }, [])
+
+
+    // ---------
+    const { slug } = useParams();
+    // console.log(process.env.REACT_APP_BACKEND_URL);
+
+
+    // getting data
+    const [product, setProduct] = useState([]);
+    async function GetProduct() {
+        const response = await axios
+            .get(`https://ayakart.dauqu.com/api/products/slug/${slug}`)
+            .then((response) => {
+                setProduct(response.data);
+                console.log(response.data);
+            });
+    }
+    useEffect(() => {
+        GetProduct();
+    }, []);
+
+
+    // add to cart
+   // posting item to cart
+   const [cart, setCart] = useState([]);
+   const [product_id, setProduct_id] = useState("");
+   const [price, setPrice] = useState("");
+   const [title, setTitle] = useState("");
+   const [featured_image, setFeatured_image] = useState("");
+ 
+   async function AddItemToCart() {
+     await axios
+       .post(`https://ayakart.dauqu.com/api/cart`, {
+         product_id: product._id,
+         price: product.sale_price,
+         title: product.title,
+         featured_image: product.featured_image,
+       })
+       .then((res) => {
+         console(res.data);
+         setCart(res.data);
+         alert("Item added");
+       });
+   }
     return (
         <motion.div
             initial={{ y: -10, opacity: 0 }}
@@ -138,7 +186,7 @@ export default function Product() {
                                                             <img
                                                                 role="presentation"
                                                                 alt="Electronics Black Wrist Watch"
-                                                                src={pc3}
+                                                                src={product.featured_image}
                                                                 className="zoomImg"
                                                                 style={{
                                                                     position: "absolute",
@@ -178,7 +226,7 @@ export default function Product() {
                                                             <img
                                                                 role="presentation"
                                                                 alt="Electronics Black Wrist Watch"
-                                                                src={pc4}
+                                                                src={product.featured_image}
                                                                 className="zoomImg"
                                                                 style={{
                                                                     position: "absolute",
@@ -218,7 +266,7 @@ export default function Product() {
                                                             <img
                                                                 role="presentation"
                                                                 alt="Electronics Black Wrist Watch"
-                                                                src={pc5}
+                                                                src={product.featured_image}
                                                                 className="zoomImg"
                                                                 style={{
                                                                     position: "absolute",
@@ -258,7 +306,7 @@ export default function Product() {
                                                             <img
                                                                 role="presentation"
                                                                 alt="Electronics Black Wrist Watch"
-                                                                src={pc6}
+                                                                src={product.featured_image}
                                                                 className="zoomImg"
                                                                 style={{
                                                                     position: "absolute",
@@ -298,7 +346,7 @@ export default function Product() {
                                                             <img
                                                                 role="presentation"
                                                                 alt="Electronics Black Wrist Watch"
-                                                                src={pc7}
+                                                                src={product.featured_image}
                                                                 className="zoomImg"
                                                                 style={{
                                                                     position: "absolute",
@@ -338,7 +386,7 @@ export default function Product() {
                                                             <img
                                                                 role="presentation"
                                                                 alt="Electronics Black Wrist Watch"
-                                                                src="file:///C:/Users/user/Downloads/portotheme.com%20(1)/portotheme.com/html/wolmart/assets/images/products/default/6-800x900.jpg"
+                                                                src={product.featured_image}
                                                                 className="zoomImg"
                                                                 style={{
                                                                     position: "absolute",
@@ -382,11 +430,11 @@ export default function Product() {
                                             <div
                                                 className="product-thumbs-wrap swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-free-mode swiper-container-thumbs"
                                                 data-swiper-options="{
-                                      'navigation': {
-                                          'nextEl': '.swiper-button-next',
-                                          'prevEl': '.swiper-button-prev'
-                                      }
-                                  }"
+                                                    'navigation': {
+                                                        'nextEl': '.swiper-button-next',
+                                                        'prevEl': '.swiper-button-prev'
+                                                    }
+                                                }"
                                             >
                                                 <div
                                                     className="product-thumbs swiper-wrapper   "
@@ -401,7 +449,7 @@ export default function Product() {
                                                         style={{ width: "106.25px", marginRight: 10 }}
                                                     >
                                                         <img
-                                                            src={pc3}
+                                                            src={product.featured_image}
                                                             alt="Product Thumb"
                                                             width={800}
                                                             height={900}
@@ -414,7 +462,7 @@ export default function Product() {
                                                         style={{ width: "106.25px", marginRight: 10 }}
                                                     >
                                                         <img
-                                                            src={pc4}
+                                                            src={product.featured_image}
                                                             alt="Product Thumb"
                                                             width={800}
                                                             height={900}
@@ -427,7 +475,7 @@ export default function Product() {
                                                         style={{ width: "106.25px", marginRight: 10 }}
                                                     >
                                                         <img
-                                                            src={pc5}
+                                                            src={product.featured_image}
                                                             alt="Product Thumb"
                                                             width={800}
                                                             height={900}
@@ -440,7 +488,7 @@ export default function Product() {
                                                         style={{ width: "106.25px", marginRight: 10 }}
                                                     >
                                                         <img
-                                                            src={pc6}
+                                                            src={product.featured_image}
                                                             alt="Product Thumb"
                                                             width={800}
                                                             height={900}
@@ -453,7 +501,7 @@ export default function Product() {
                                                         style={{ width: "106.25px", marginRight: 10 }}
                                                     >
                                                         <img
-                                                            src={pc7}
+                                                            src={product.featured_image}
                                                             alt="Product Thumb"
                                                             width={800}
                                                             height={900}
@@ -466,7 +514,7 @@ export default function Product() {
                                                         style={{ width: "106.25px", marginRight: 10 }}
                                                     >
                                                         <img
-                                                            src="assets/images/products/default/6-800x900.jpg"
+                                                            src={product.featured_image}
                                                             alt="Product Thumb"
                                                             width={800}
                                                             height={900}
@@ -501,11 +549,11 @@ export default function Product() {
                                             className="product-details"
                                             data-sticky-options="{'minWidth': 767}"
                                         >
-                                            <h1 className="product-title">Electronics Black Wrist Watch</h1>
+                                            <h1 className="product-title">{product.title}</h1>
                                             <div className="product-bm-wrapper">
                                                 <figure className="brand">
                                                     <img
-                                                        src="assets/images/products/brand/brand-1.jpg"
+                                                        src={product.featured_image}
                                                         alt="Brand"
                                                         width={102}
                                                         height={48}
@@ -515,17 +563,20 @@ export default function Product() {
                                                     <div className="product-categories">
                                                         Category:
                                                         <span className="product-category">
-                                                            <a href="#">Electronics</a>
+                                                            <a href="#">{product.category}</a>
                                                         </span>
                                                     </div>
                                                     <div className="product-sku">
-                                                        SKU: <span>MS46891340</span>
+                                                        SKU: <span>{product.sku}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <hr className="product-divider" />
                                             <div className="product-price">
-                                                <ins className="new-price">$40.00</ins>
+                                                <ins className="new-price"> {Intl.NumberFormat("en-US", {
+                                                    style: "currency",
+                                                    currency: "INR",
+                                                }).format(product.sale_price)}</ins>
                                             </div>
                                             <div className="ratings-container">
                                                 <div className="ratings-full">
@@ -541,8 +592,8 @@ export default function Product() {
                                             </div>
                                             <div className="product-short-desc">
                                                 <ul className="list-type-check list-style-none">
-                                                    <li>Ultrices eros in cursus turpis massa cursus mattis.</li>
-                                                    <li>Volutpat ac tincidunt vitae semper quis lectus.</li>
+                                                    <li>{product.description}.</li>
+                                                    <li>Regular price of this product is {product.regular_price} INR.</li>
                                                     <li>Aliquam id diam maecenas ultricies mi eget mauris.</li>
                                                 </ul>
                                             </div>
@@ -642,7 +693,7 @@ export default function Product() {
                                                                 <button className="quantity-minus w-icon-minus" />
                                                             </div>
                                                         </div>
-                                                        <button className="btn btn-primary btn-cart disabled">
+                                                        <button className="btn btn-primary btn-cart  " onClick={() => AddItemToCart()}>
                                                             <i className="w-icon-cart" />
                                                             <span>Add to Cart</span>
                                                         </button>

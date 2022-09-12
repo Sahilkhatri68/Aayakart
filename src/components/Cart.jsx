@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion"
 import Footer from './Footer'
-
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Mainheader from './Mainheader'
 import sp from "./../assets/images/shop/12.jpg"
 import sp1 from "./../assets/images/shop/13.jpg"
@@ -18,6 +19,25 @@ export default function Cart() {
             scrollToTop();
         }, [])
     }
+
+    // ----------------
+    
+//   const cartDetails = useSelector((state) => state.cart);
+//   const { cartItems } = cartDetails;
+  const { slug } = useParams();
+
+  // getting data
+  const [product, setProduct] = useState([]);
+  async function GetData(slug) {
+    const res = await axios.get(`https://ayakart.dauqu.com/api/cart`);
+    setProduct(res.data);
+    GetData();
+
+    // console.log(res.data);
+  }
+  useEffect(() => {
+    GetData();
+  }, []);
     return (
 
         <>

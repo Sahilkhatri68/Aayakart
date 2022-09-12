@@ -2,6 +2,7 @@ import React from 'react'
 import "./../assets/css/demo1.min.css";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "./../assets/css/style.min.css";
 
@@ -78,57 +79,59 @@ export default function Populardepartments() {
             {product.map((item) => {
               return (
                 <> <div className="product-wrap">
-                  <div className="product text-center">
-                    <figure className="product-media" style={{ height: 250 }}>
-                      <a href="product-default.html">
-                        <img
-                          src={item.featured_image}
-                          alt="Product"
-                          style={{ width: "full", margin: "auto" }}
-                        />
+                  <Link to={`/product/${item.slug}`}>
+                    <div className="product text-center">
+                      <figure className="product-media" style={{ height: 250 }}>
+                        <a href="product-default.html">
+                          <img
+                            src={item.featured_image}
+                            alt="Product"
+                            style={{ width: "full", margin: "auto" }}
+                          />
 
-                      </a>
-                      <div className="product-action-vertical">
-                        <a
-                          href="#"
-                          className="btn-product-icon btn-cart w-icon-cart"
-                          title="Add to cart"
-                        />
-                        <a
-                          href="#"
-                          className="btn-product-icon btn-wishlist w-icon-heart"
-                          title="Add to wishlist"
-                        />
-                        <a
-                          href="#"
-                          className="btn-product-icon btn-quickview w-icon-search"
-                          title="Quickview"
-                        />
-                        <a
-                          href="#"
-                          className="btn-product-icon btn-compare w-icon-compare"
-                          title="Add to Compare"
-                        />
-                      </div>
-                    </figure>
-                    <div className="product-details">
-                      <h3 className="product-name">
-                        <a href="product-default.html">{item.slug}</a>
-                      </h3>
-                      <div className="ratings-container">
-                        <div className="ratings-full">
-                          <span className="ratings" style={{ width: "60%" }} />
-                          <span className="tooltiptext tooltip-top" />
-                        </div>
-                        <a href="product-default.html" className="rating-reviews">
-                          (1 Reviews)
                         </a>
-                      </div>
-                      <div className="product-price">
-                        <ins className="new-price">{item.sale_price}</ins>
+                        <div className="product-action-vertical">
+                          <a
+                            href="#"
+                            className="btn-product-icon btn-cart w-icon-cart"
+                            title="Add to cart"
+                          />
+                          <a
+                            href="#"
+                            className="btn-product-icon btn-wishlist w-icon-heart"
+                            title="Add to wishlist"
+                          />
+                          <a
+                            href="#"
+                            className="btn-product-icon btn-quickview w-icon-search"
+                            title="Quickview"
+                          />
+                          <a
+                            href="#"
+                            className="btn-product-icon btn-compare w-icon-compare"
+                            title="Add to Compare"
+                          />
+                        </div>
+                      </figure>
+                      <div className="product-details">
+                        <h3 className="product-name">
+                          <a href="product-default.html">{item.slug}</a>
+                        </h3>
+                        <div className="ratings-container">
+                          <div className="ratings-full">
+                            <span className="ratings" style={{ width: "60%" }} />
+                            <span className="tooltiptext tooltip-top" />
+                          </div>
+                          <a href="product-default.html" className="rating-reviews">
+                            (1 Reviews)
+                          </a>
+                        </div>
+                        <div className="product-price">
+                          <ins className="new-price">{item.sale_price}</ins>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div></>
               )
             })}

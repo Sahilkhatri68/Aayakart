@@ -352,63 +352,65 @@ function Allproduct() {
                                             return (
                                                 <>
                                                     <div className="product-wrap">
-                                                        <div className="product text-center">
-                                                            <figure className="product-media" style={{ height: 300 }}>
-                                                                <a href="#">
+                                                        <Link to={`/product/${item.slug}`}>
+                                                            <div className="product text-center">
+                                                                <figure className="product-media" style={{ height: 300 }}>
+
                                                                     <img
                                                                         src={item.featured_image}
                                                                         alt="Product"
                                                                         width={300}
                                                                         height={338}
                                                                     />
-                                                                </a>
-                                                                <div className="product-action-horizontal">
-                                                                    <a
-                                                                        href="#"
-                                                                        className="btn-product-icon btn-cart w-icon-cart"
-                                                                        title="Add to cart"
-                                                                    />
-                                                                    <a
-                                                                        href="#"
-                                                                        className="btn-product-icon btn-wishlist w-icon-heart"
-                                                                        title="Wishlist"
-                                                                    />
-                                                                    <a
-                                                                        href="#"
-                                                                        className="btn-product-icon btn-compare w-icon-compare"
-                                                                        title="Compare"
-                                                                    />
-                                                                    <a
-                                                                        href="#"
-                                                                        className="btn-product-icon btn-quickview w-icon-search"
-                                                                        title="Quick View"
-                                                                    />
-                                                                </div>
-                                                            </figure>
-                                                            <div className="product-details">
-                                                                <div className="product-cat">
-                                                                    <a href="#">{item.category}</a>
-                                                                </div>
-                                                                <h3 className="product-name">
-                                                                    <a href="#">{item.description}</a>
-                                                                </h3>
-                                                                <div className="ratings-container">
-                                                                    <div className="ratings-full">
-                                                                        <span className="ratings" style={{ width: "100%" }} />
-                                                                        <span className="tooltiptext tooltip-top" />
+
+                                                                    <div className="product-action-horizontal">
+                                                                        <a
+                                                                            href="#"
+                                                                            className="btn-product-icon btn-cart w-icon-cart"
+                                                                            title="Add to cart"
+                                                                        />
+                                                                        <a
+                                                                            href="#"
+                                                                            className="btn-product-icon btn-wishlist w-icon-heart"
+                                                                            title="Wishlist"
+                                                                        />
+                                                                        <a
+                                                                            href="#"
+                                                                            className="btn-product-icon btn-compare w-icon-compare"
+                                                                            title="Compare"
+                                                                        />
+                                                                        <a
+                                                                            href="#"
+                                                                            className="btn-product-icon btn-quickview w-icon-search"
+                                                                            title="Quick View"
+                                                                        />
                                                                     </div>
-                                                                    <a
-                                                                        href="https://www.portotheme.com/html/wolmart/product.html"
-                                                                        className="rating-reviews"
-                                                                    >
-                                                                        (3 reviews)
-                                                                    </a>
-                                                                </div>
-                                                                <div className="product-pa-wrapper">
-                                                                    <div className="product-price">{item.sale_price}</div>
+                                                                </figure>
+                                                                <div className="product-details">
+                                                                    <div className="product-cat">
+                                                                        <a href="#">{item.category}</a>
+                                                                    </div>
+                                                                    <h3 className="product-name">
+                                                                        <a href="#">{item.description}</a>
+                                                                    </h3>
+                                                                    <div className="ratings-container">
+                                                                        <div className="ratings-full">
+                                                                            <span className="ratings" style={{ width: "100%" }} />
+                                                                            <span className="tooltiptext tooltip-top" />
+                                                                        </div>
+                                                                        <a
+                                                                            href="https://www.portotheme.com/html/wolmart/product.html"
+                                                                            className="rating-reviews"
+                                                                        >
+                                                                            (3 reviews)
+                                                                        </a>
+                                                                    </div>
+                                                                    <div className="product-pa-wrapper">
+                                                                        <div className="product-price">{item.sale_price}</div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </Link>
                                                     </div>
                                                 </>
                                             )

@@ -107,6 +107,7 @@ export default function Newarrivals() {
                     aria-label="1 / 4"
                     style={{ width: "291.5px", marginRight: 20 }}
                   >
+                    
                     <div className="product-wrap product text-center">
                       <figure className="product-media" style={{height:350}}>
                         <a href="#">

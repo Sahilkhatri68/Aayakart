@@ -40,7 +40,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" exact element={<MainBody />}></Route>
-        <Route path="/product" exact element={<Product />}></Route>
+        <Route path="/product/:slug" exact element={<Product />}></Route>
         <Route path="/allproduct" exact element={<Allproduct />}></Route>
         <Route path="/cart" exact element={<Cart />}></Route>
         <Route path="/chekcout" exact element={<Checkout />}></Route>
