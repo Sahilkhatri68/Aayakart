@@ -30,6 +30,7 @@ import {
 import OurBlog from "./components/OurBlog";
 import Emptycart from "./components/Emptycart";
 import axios from "axios";
+import Allproduct from "./components/Allproduct";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<MainBody />}></Route>
         <Route path="/product" exact element={<Product />}></Route>
+        <Route path="/allproduct" exact element={<Allproduct />}></Route>
         <Route path="/cart" exact element={<Cart />}></Route>
         <Route path="/chekcout" exact element={<Checkout />}></Route>
         <Route path="/ordercomplete" exact element={<OrderComplete />}></Route>

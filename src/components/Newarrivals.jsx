@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import axios from "axios";
 import "./../assets/css/demo1.min.css";
 import "./../assets/css/style.min.css";
@@ -36,13 +38,13 @@ export default function Newarrivals() {
     >
       <div className="title-link-wrapper pb-1 mb-4">
         <h2 className="title ls-normal mb-0">Clothing &amp; Apparel</h2>
-        <a
+        <Link to ="/allproduct"
           href="shop-boxed-banner.html"
           className="font-size-normal font-weight-bold ls-25 mb-0"
         >
           More Products
           <i className="w-icon-long-arrow-right" />
-        </a>
+        </Link>
       </div>
       <div className="row">
         <div className="col-lg-3 col-sm-4 mb-4">
