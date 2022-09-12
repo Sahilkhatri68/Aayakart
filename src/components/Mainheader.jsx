@@ -8,6 +8,8 @@ import banr3 from "./../assets/images/menu/banner-3.jpg"
 import banr4 from "./../assets/images/menu/banner-4.jpg"
 import banr5 from "./../assets/images/menu/banner-5.jpg"
 import banr6 from "./../assets/images/menu/banner-6.jpg"
+import { Link } from "react-router-dom";
+
 export default function Mainheader() {
   return (
     <>
@@ -23,7 +25,7 @@ export default function Mainheader() {
               </div>
               <div className="header-right">
                 <div className="dropdown">
-                  <a href="#currency">USD</a>
+                  <a href="#">USD</a>
                   <div className="dropdown-box">
                     <a href="#USD">USD</a>
                     <a href="#EUR">EUR</a>
@@ -66,26 +68,25 @@ export default function Mainheader() {
                 </div>
                 {/* End of Dropdown Menu */}
                 <span className="divider d-lg-show" />
-                <a href="blog.html" className="d-lg-show">
+                <Link to="/ourblog" className="d-lg-show">
                   Blog
-                </a>
-                <a href="contact-us.html" className="d-lg-show">
+                </Link>
+                <Link to="/contactus" className="d-lg-show">
                   Contact Us
-                </a>
-                <a href="my-account.html" className="d-lg-show">
+                </Link>
+                <Link to="/myaccount" className="d-lg-show">
                   My Account
-                </a>
-                <a href="assets/ajax/login.html" className="d-lg-show login sign-in">
+                </Link>
+                <Link to="/login" className="d-lg-show login sign-in">
                   <i className="w-icon-account" />
                   Sign In
-                </a>
+                </Link>
                 <span className="delimiter d-lg-show">/</span>
-                <a
-                  href="assets/ajax/login.html"
+                <Link to="/register"
                   className="ml-0 d-lg-show login register"
                 >
                   Register
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -93,19 +94,18 @@ export default function Mainheader() {
           <div className="header-middle">
             <div className="container">
               <div className="header-left mr-md-4">
-                <a
-                  href="#"
+                <Link to="/"> <div
                   className="mobile-menu-toggle  w-icon-hamburger"
                   aria-label="menu-toggle"
-                ></a>
-                <a href="demo1.html" className="logo ml-lg-0">
+                ></div></Link>
+                <Link to="/">  <div className="logo ml-lg-0">
                   <img
                     src={logo}
                     alt="logo"
                     width={144}
                     height={45}
                   />
-                </a>
+                </div></Link>
                 <form
                   method="get"
                   action="#"
@@ -153,25 +153,25 @@ export default function Mainheader() {
                     </a>
                   </div>
                 </div>
-                <a
+                <Link to="/wishlist"
                   className="wishlist label-down link d-xs-show"
-                  href="wishlist.html"
+
                 >
                   <i className="w-icon-heart" />
                   <span className="wishlist-label d-lg-show">Wishlist</span>
-                </a>
+                </Link>
                 <a className="compare label-down link d-xs-show" href="compare.html">
                   <i className="w-icon-compare" />
                   <span className="compare-label d-lg-show">Compare</span>
                 </a>
                 <div className="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
                   <div className="cart-overlay" />
-                  <a href="#" className="cart-toggle label-down link">
+                  <Link to="/cart"> <div className="cart-toggle label-down link">
                     <i className="w-icon-cart">
-                      <span className="cart-count">2</span>
+                      {/* <span className="cart-count">2</span> */}
                     </i>
                     <span className="cart-label">Cart</span>
-                  </a>
+                  </div></Link>
                   <div className="dropdown-box">
                     <div className="cart-header">
                       <span>Shopping Cart</span>
@@ -1197,9 +1197,9 @@ export default function Mainheader() {
                           <li>
                             <a href="become-a-vendor.html">Become A Vendor</a>
                           </li>
-                          <li>
-                            <a href="contact-us.html">Contact Us</a>
-                          </li>
+                          <Link to="/contactus">  <li>
+                            <>Contact Us</>
+                          </li></Link>
                           <li>
                             <a href="faq.html">FAQs</a>
                           </li>
@@ -1209,12 +1209,12 @@ export default function Mainheader() {
                           <li>
                             <a href="coming-soon.html">Coming Soon</a>
                           </li>
-                          <li>
-                            <a href="wishlist.html">Wishlist</a>
-                          </li>
-                          <li>
+                          <Link to="/wishlist">
+                            <  >Wishlist</ >
+                          </Link>
+                          <Link to="/cart"> <li>
                             <a href="cart.html">Cart</a>
-                          </li>
+                          </li></Link>
                           <li>
                             <a href="checkout.html">Checkout</a>
                           </li>

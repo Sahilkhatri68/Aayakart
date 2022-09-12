@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion"
 import Footer from './Footer'
 import Mainheader from './Mainheader'
 import pc from "./../assets/images/products/product-nav-prev.jpg"
@@ -27,8 +28,25 @@ import sp1 from "./../assets/images/shop/16.jpg"
 import sp2 from "./../assets/images/shop/17.jpg"
 import sp3 from "./../assets/images/shop/18.jpg"
 export default function Product() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+    useEffect(() => {
+        scrollToTop();
+    }, [])
     return (
-        <div>
+        <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2, stiffness: 500 }}
+            style={{
+                width: "100%",
+                height: "100%",
+            }}>
             <div>
                 <Mainheader />
             </div>
@@ -2650,6 +2668,6 @@ export default function Product() {
             <div style={{ marginTop: 30 }}>
                 <Footer />
             </div>
-        </div>
+        </motion.div>
     )
 }

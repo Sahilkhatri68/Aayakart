@@ -22,23 +22,36 @@ import Myaccount from "./components/Myaccount";
 import Contactus from "./components/Contactus";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import OurBlog from "./components/OurBlog";
+import Emptycart from "./components/Emptycart";
+import axios from "axios";
 
-
+// credentials of axios--------------------
+axios.defaults.withCredentials = true;
+// credentials of axios--------------------
 function App() {
   return (
     <div>
-
-      <MainBody />
-      {/* <Product/> */}
-      {/* <Cart /> */}
-      {/* <Checkout /> */}
-      {/* <OrderComplete /> */}
-      {/* <Wishlist /> */}
-      {/* <Error404 /> */}
-      {/* <Myaccount /> */}
-      {/* <Contactus /> */}
-      {/* <Login /> */}
-      {/* <Register /> */}
+      <Routes>
+        <Route path="/" exact element={<MainBody />}></Route>
+        <Route path="/product" exact element={<Product />}></Route>
+        <Route path="/cart" exact element={<Cart />}></Route>
+        <Route path="/chekcout" exact element={<Checkout />}></Route>
+        <Route path="/ordercomplete" exact element={<OrderComplete />}></Route>
+        <Route path="/wishlist" exact element={<Wishlist />}></Route>
+        <Route path="/myaccount" exact element={<Myaccount />}></Route>
+        <Route path="/contactus" exact element={<Contactus />}></Route>
+        <Route path="/ourblog" exact element={<OurBlog />}></Route>
+        <Route path="/login" exact element={<Login />}></Route>
+        <Route path="/register" exact element={<Register />}></Route>
+        <Route path="/emptycart" exact element={<Emptycart />}></Route>
+        <Route path="*" exact element={<Error404 />}></Route>
+      </Routes>
     </div>
   );
 }

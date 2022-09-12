@@ -2,6 +2,8 @@ import React from 'react'
 import Footer from './Footer'
 import Mainheader from './Mainheader'
 import er from "./../assets/images/pages/404.png"
+import { Link } from "react-router-dom";
+
 export default function Error404() {
     return (
         <div>
@@ -43,13 +45,12 @@ export default function Error404() {
                                         There may be a misspelling in the URL entered, or the page you are
                                         looking for may no longer exist
                                     </p>
-                                    <a
-                                        href="demo1.html"
-                                        className="btn btn-dark btn-rounded btn-icon-right"
-                                    >
+                                    <Link to="/"
+                                        className="btn btn-dark btn-rounded btn-icon-right">
+
                                         Go Back Home
                                         <i className="w-icon-long-arrow-right" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

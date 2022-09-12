@@ -1,16 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion"
 import Footer from './Footer'
+
 import Mainheader from './Mainheader'
 import sp from "./../assets/images/shop/12.jpg"
 import sp1 from "./../assets/images/shop/13.jpg"
 export default function Cart() {
+    function Subscription() {
+
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        };
+        useEffect(() => {
+            scrollToTop();
+        }, [])
+    }
     return (
 
-        <div>
+        <>
             <div>
                 <Mainheader />
             </div>
-            <div>
+            <motion.div
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.2, stiffness: 500 }}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                }}>
                 <main className="main cart">
                     {/* Start of Breadcrumb */}
                     <nav className="breadcrumb-nav">
@@ -327,11 +349,11 @@ export default function Cart() {
                 </main>
 
 
-            </div>
+            </motion.div>
             <div>
                 <Footer />
             </div>
-        </div>
+        </>
     )
 }
 
