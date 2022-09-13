@@ -31,6 +31,7 @@ import OurBlog from "./components/OurBlog";
 import Emptycart from "./components/Emptycart";
 import axios from "axios";
 import Allproduct from "./components/Allproduct";
+import Aboutus from "./components/Aboutus";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -52,6 +53,7 @@ function App() {
         <Route path="/login" exact element={<Login />}></Route>
         <Route path="/register" exact element={<Register />}></Route>
         <Route path="/emptycart" exact element={<Emptycart />}></Route>
+        <Route path="/aboutus" exact element={<Aboutus />}></Route>
         <Route path="*" exact element={<Error404 />}></Route>
       </Routes>
     </div>

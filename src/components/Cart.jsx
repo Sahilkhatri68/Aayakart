@@ -9,6 +9,7 @@ import Mainheader from './Mainheader'
 import sp from "./../assets/images/shop/12.jpg"
 import sp1 from "./../assets/images/shop/13.jpg"
 import Emptycart from './Emptycart';
+import Emptycarttwo from './Emptycarttwo';
 export default function Cart() {
     function Subscription() {
 
@@ -98,7 +99,7 @@ export default function Cart() {
     return (
 
         <>
-            {product.length == 0 ? (<><Emptycart /></>) : (<> <div>
+            {product.length == 0 ? (<><Emptycarttwo /></>) : (<> <div>
                 <Mainheader />
             </div>
                 <motion.div
@@ -214,7 +215,7 @@ export default function Cart() {
                                                 <i className="w-icon-long-arrow-left" />
                                                 Continue Shopping
                                             </Link>
-                                         
+
                                             <button
                                                 type="submit"
                                                 className="btn btn-rounded btn-update disabled"

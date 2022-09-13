@@ -8,6 +8,7 @@ import whs from "./../assets/images/shop/7-1.jpg"
 import whs2 from "./../assets/images/shop/19-1.jpg"
 import whs3 from "./../assets/images/shop/20.jpg"
 import Emptycart from './Emptycart';
+import Emptycarttwo from './Emptycarttwo';
 export default function Wishlist() {
     const scrollToTop = () => {
         window.scrollTo({
@@ -36,7 +37,7 @@ export default function Wishlist() {
 
     return (
         <>
-            {product.length === 0 ? (<><Emptycart /></>) : (<>
+            {product.length === 0 ? (<><Emptycarttwo /></>) : (<>
                 <div>
                     <Mainheader />
                 </div>

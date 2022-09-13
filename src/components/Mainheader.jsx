@@ -8,6 +8,7 @@ import banr3 from "./../assets/images/menu/banner-3.jpg"
 import banr4 from "./../assets/images/menu/banner-4.jpg"
 import banr5 from "./../assets/images/menu/banner-5.jpg"
 import banr6 from "./../assets/images/menu/banner-6.jpg"
+import aayakartlogo from "./../assets/images/pages/akrtlogo.png";
 import { Link } from "react-router-dom";
 
 export default function Mainheader() {
@@ -24,15 +25,15 @@ export default function Mainheader() {
                 </p>
               </div>
               <div className="header-right">
-                <div className="dropdown">
+                {/* <div className="dropdown">
                   <a href="#">USD</a>
                   <div className="dropdown-box">
                     <a href="#USD">USD</a>
                     <a href="#EUR">EUR</a>
                   </div>
-                </div>
+                </div> */}
                 {/* End of DropDown Menu */}
-                <div className="dropdown">
+                {/* <div className="dropdown">
                   <a href="#language">
                     <img
                       src={eng}
@@ -65,7 +66,7 @@ export default function Mainheader() {
                       FRA
                     </a>
                   </div>
-                </div>
+                </div> */}
                 {/* End of Dropdown Menu */}
                 <span className="divider d-lg-show" />
                 <Link to="/ourblog" className="d-lg-show">
@@ -100,7 +101,7 @@ export default function Mainheader() {
                 ></div></Link>
                 <Link to="/">  <div className="logo ml-lg-0">
                   <img
-                    src={logo}
+                    src={aayakartlogo}
                     alt="logo"
                     width={144}
                     height={45}
@@ -160,10 +161,10 @@ export default function Mainheader() {
                   <i className="w-icon-heart" />
                   <span className="wishlist-label d-lg-show">Wishlist</span>
                 </Link>
-                <a className="compare label-down link d-xs-show" href="compare.html">
+                {/* <a className="compare label-down link d-xs-show" href="compare.html">
                   <i className="w-icon-compare" />
                   <span className="compare-label d-lg-show">Compare</span>
-                </a>
+                </a> */}
                 <div className="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
                   <div className="cart-overlay" />
                   <Link to="/cart"> <div className="cart-toggle label-down link">
@@ -293,7 +294,7 @@ export default function Mainheader() {
                             <i className="w-icon-tshirt2" />
                             Fashion
                           </a>
-                          <ul className="megamenu">
+                          {/* <ul className="megamenu">
                             <li>
                               <h4 className="menu-title">Women</h4>
                               <hr className="divider" />
@@ -396,14 +397,14 @@ export default function Mainheader() {
                                 </div>
                               </div>
                             </li>
-                          </ul>
+                          </ul> */}
                         </li>
                         <li>
                           <a href="shop-fullwidth-banner.html">
                             <i className="w-icon-home" />
                             Home &amp; Garden
                           </a>
-                          <ul className="megamenu">
+                          {/* <ul className="megamenu">
                             <li>
                               <h4 className="menu-title">Bedroom</h4>
                               <hr className="divider" />
@@ -546,14 +547,14 @@ export default function Mainheader() {
                                 </div>
                               </div>
                             </li>
-                          </ul>
+                          </ul> */}
                         </li>
                         <li>
                           <a href="shop-fullwidth-banner.html">
                             <i className="w-icon-electronics" />
                             Electronics
                           </a>
-                          <ul className="megamenu">
+                          {/* <ul className="megamenu">
                             <li>
                               <h4 className="menu-title">Laptops &amp; Computers</h4>
                               <hr className="divider" />
@@ -685,14 +686,14 @@ export default function Mainheader() {
                                 </div>
                               </div>
                             </li>
-                          </ul>
+                          </ul> */}
                         </li>
                         <li>
                           <a href="shop-fullwidth-banner.html">
                             <i className="w-icon-furniture" />
                             Furniture
                           </a>
-                          <ul className="megamenu type2">
+                          {/* <ul className="megamenu type2">
                             <li className="row">
                               <div className="col-md-3 col-lg-3 col-6">
                                 <h4 className="menu-title">Furniture</h4>
@@ -861,7 +862,7 @@ export default function Mainheader() {
                                 </div>
                               </div>
                             </li>
-                          </ul>
+                          </ul> */}
                         </li>
                         <li>
                           <a href="shop-fullwidth-banner.html">
@@ -925,7 +926,7 @@ export default function Mainheader() {
                       <li>
                         <a href="shop-banner-sidebar.html">Shop</a>
                         {/* Start of Megamenu */}
-                        <ul className="megamenu">
+                        {/* <ul className="megamenu">
                           <li>
                             <h4 className="menu-title">Shop Pages</h4>
                             <ul>
@@ -1065,166 +1066,17 @@ export default function Mainheader() {
                               </li>
                             </ul>
                           </li>
-                        </ul>
+                        </ul> */}
                         {/* End of Megamenu */}
                       </li>
+
                       <li>
-                        <a href="vendor-dokan-store.html">Vendor</a>
-                        <ul>
-                          <li>
-                            <a href="vendor-dokan-store-list.html">Store Listing</a>
-                            <ul>
-                              <li>
-                                <a href="vendor-dokan-store-list.html">
-                                  Store listing 1
-                                </a>
-                              </li>
-                              <li>
-                                <a href="vendor-wcfm-store-list.html">
-                                  Store listing 2
-                                </a>
-                              </li>
-                              <li>
-                                <a href="vendor-wcmp-store-list.html">
-                                  Store listing 3
-                                </a>
-                              </li>
-                              <li>
-                                <a href="vendor-wc-store-list.html">
-                                  Store listing 4
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="vendor-dokan-store.html">Vendor Store</a>
-                            <ul>
-                              <li>
-                                <a href="vendor-dokan-store.html">Vendor Store 1</a>
-                              </li>
-                              <li>
-                                <a href="vendor-wcfm-store-product-grid.html">
-                                  Vendor Store 2
-                                </a>
-                              </li>
-                              <li>
-                                <a href="vendor-wcmp-store-product-grid.html">
-                                  Vendor Store 3
-                                </a>
-                              </li>
-                              <li>
-                                <a href="vendor-wc-store-product-grid.html">
-                                  Vendor Store 4
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
+                        <a href="#">Blog</a>
+
                       </li>
                       <li>
-                        <a href="blog.html">Blog</a>
-                        <ul>
-                          <li>
-                            <a href="blog.html">Classic</a>
-                          </li>
-                          <li>
-                            <a href="blog-listing.html">Listing</a>
-                          </li>
-                          <li>
-                            <a href="blog-grid-3cols.html">Grid</a>
-                            <ul>
-                              <li>
-                                <a href="blog-grid-2cols.html">Grid 2 columns</a>
-                              </li>
-                              <li>
-                                <a href="blog-grid-3cols.html">Grid 3 columns</a>
-                              </li>
-                              <li>
-                                <a href="blog-grid-4cols.html">Grid 4 columns</a>
-                              </li>
-                              <li>
-                                <a href="blog-grid-sidebar.html">Grid sidebar</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-masonry-3cols.html">Masonry</a>
-                            <ul>
-                              <li>
-                                <a href="blog-masonry-2cols.html">
-                                  Masonry 2 columns
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-masonry-3cols.html">
-                                  Masonry 3 columns
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-masonry-4cols.html">
-                                  Masonry 4 columns
-                                </a>
-                              </li>
-                              <li>
-                                <a href="blog-masonry-sidebar.html">
-                                  Masonry sidebar
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="blog-mask-grid.html">Mask</a>
-                            <ul>
-                              <li>
-                                <a href="blog-mask-grid.html">Blog mask grid</a>
-                              </li>
-                              <li>
-                                <a href="blog-mask-masonry.html">Blog mask masonry</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="post-single.html">Single Post</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="about-us.html">Pages</a>
-                        <ul>
-                          <li>
-                            <a href="about-us.html">About Us</a>
-                          </li>
-                          <li>
-                            <a href="become-a-vendor.html">Become A Vendor</a>
-                          </li>
-                          <Link to="/contactus">  <li>
-                            <>Contact Us</>
-                          </li></Link>
-                          <li>
-                            <a href="faq.html">FAQs</a>
-                          </li>
-                          <li>
-                            <a href="error-404.html">Error 404</a>
-                          </li>
-                          <li>
-                            <a href="coming-soon.html">Coming Soon</a>
-                          </li>
-                          <Link to="/wishlist">
-                            <  >Wishlist</ >
-                          </Link>
-                          <Link to="/cart"> <li>
-                            <a href="cart.html">Cart</a>
-                          </li></Link>
-                          <li>
-                            <a href="checkout.html">Checkout</a>
-                          </li>
-                          <li>
-                            <a href="my-account.html">My Account</a>
-                          </li>
-                          <li>
-                            <a href="compare.html">Compare</a>
-                          </li>
-                        </ul>
+                        <Link to="/aboutus">About Us</Link>
+
                       </li>
                       <li>
                         <a href="elements.html">Elements</a>
