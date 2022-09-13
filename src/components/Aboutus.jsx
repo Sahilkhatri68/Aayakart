@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+
 import { motion } from "framer-motion"
 import Mainheader from './Mainheader'
 import Footer from './Footer'
@@ -14,6 +15,15 @@ import abs2 from "./../assets/images/pages/about_us/2.png"
 import abs3 from "./../assets/images/pages/about_us/3.png"
 import abs4 from "./../assets/images/pages/about_us/4.png"
 function Aboutus() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+    useEffect(() => {
+        scrollToTop();
+    }, [])
     return (
         <motion.div
             initial={{ y: -10, opacity: 0 }}
@@ -267,7 +277,7 @@ function Aboutus() {
                                         </a>
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </section>
                         <section className="member-section mt-10 pt-9 mb-10 pb-4">
