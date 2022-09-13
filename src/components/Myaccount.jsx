@@ -5,8 +5,10 @@ import { motion } from "framer-motion"
 import axios from "axios";
 import userEvent from '@testing-library/user-event';
 import Emptycart from './Emptycart';
+import { useNavigate } from "react-router-dom";
 
 export default function Myaccount() {
+    let navigate = useNavigate();
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -18,7 +20,7 @@ export default function Myaccount() {
     }, [])
 
 
- 
+
     const [users, setUsers] = useState([])
     async function Getuser() {
         try {
@@ -46,6 +48,22 @@ export default function Myaccount() {
             console.log(error)
         }
     }
+
+    //       // logout funtion--------------------
+    async function UserLogut() {
+        try {
+            const resp = await axios.get("https://ayakart.dauqu.com/api/login/logout", {
+                withCredentials: true,
+            });
+            console.log(resp.data);
+            console.log("logout done");
+            navigate("/", { replace: true });
+            // navigate("/");
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    //   console.warn(user + " user");
 
     return (
         <>
@@ -211,18 +229,18 @@ export default function Myaccount() {
                                                         </div>
                                                     </a>
                                                 </div>
-                                                <div className="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4">
-                                                    <a href="#">
-                                                        <div className="icon-box text-center">
-                                                            <span className="icon-box-icon icon-logout">
-                                                                <i className="w-icon-logout" />
-                                                            </span>
-                                                            <div className="icon-box-content">
-                                                                <p className="text-uppercase mb-0">Logout</p>
-                                                            </div>
+                                                <button className="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4" style={{ border: "none" }} onClick={() => UserLogut()}>
+
+                                                    <div className="icon-box text-center">
+                                                        <span className="icon-box-icon icon-logout">
+                                                            <i className="w-icon-logout" />
+                                                        </span>
+                                                        <div className="icon-box-content">
+                                                            <p className="text-uppercase mb-0">Logout</p>
                                                         </div>
-                                                    </a>
-                                                </div>
+                                                    </div>
+
+                                                </button>
                                             </div>
                                         </div>
                                         <div className="tab-pane mb-4" id="account-orders">
@@ -571,7 +589,7 @@ export default function Myaccount() {
                 <div>
                     <Footer />
                 </div>
-                </>)}
+            </>)}
 
         </>
     )
