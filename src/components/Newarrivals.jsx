@@ -155,8 +155,14 @@ export default function Newarrivals() {
                           </a>
                         </div>
                         <div className="product-price">
-                          <ins className="new-price">$23.99</ins>
-                          <del className="old-price">$25.68</del>
+                        <ins className="new-price">{Intl.NumberFormat("en-US", {
+                                                    style: "currency",
+                                                    currency: "INR",
+                                                }).format(item.sale_price)}</ins>
+                          <del className="old-price">{Intl.NumberFormat("en-US", {
+                                                    style: "currency",
+                                                    currency: "INR",
+                                                }).format(item.regular_price)}</del>
                         </div>
                       </div>
                     </div>
@@ -208,8 +214,14 @@ export default function Newarrivals() {
                           </a>
                         </div>
                         <div className="product-price">
-                          <ins className="new-price">$25.68</ins>
-                          <del className="old-price">$28.99</del>
+                          <ins className="new-price">{Intl.NumberFormat("en-US", {
+                                                    style: "currency",
+                                                    currency: "INR",
+                                                }).format(item.sale_price)}</ins>
+                          <del className="old-price">{Intl.NumberFormat("en-US", {
+                                                    style: "currency",
+                                                    currency: "INR",
+                                                }).format(item.regular_price)}</del>
                         </div>
                       </div>
                     </div>

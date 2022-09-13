@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion"
 import Footer from './Footer'
+import axios from "axios";
+
 import Mainheader from './Mainheader'
 import whs from "./../assets/images/shop/7-1.jpg"
 import whs2 from "./../assets/images/shop/19-1.jpg"
 import whs3 from "./../assets/images/shop/20.jpg"
+import Emptycart from './Emptycart';
 export default function Wishlist() {
     const scrollToTop = () => {
         window.scrollTo({
@@ -15,9 +18,47 @@ export default function Wishlist() {
     useEffect(() => {
         scrollToTop();
     }, [])
+
+
+    // checking usere------------
+
+    async function GetUsers() {
+        try {
+            const response = await axios.get("https://ayakart.dauqu.com/api/profile", {
+                withCredentials: true,
+            });
+            setUser(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    React.useEffect(() => {
+        GetUsers();
+    }, []);
+
+    const [user, setUser] = useState([]);
+    console.log(user)
+    // checking user
+    async function CheckUser() {
+        try {
+            const resp = await axios.post(
+                `https://ayakart.dauqu.com/api/login/checklogin`,
+                {
+                    withCredentials: true,
+                }
+            );
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    React.useEffect(() => {
+        CheckUser();
+    }, []);
     return (
         <>
-            <div>
+        {user.length == 0 ? (<><Emptycart/></>):(<> 
+        <div>
                 <Mainheader />
             </div>
             <motion.div
@@ -225,7 +266,8 @@ export default function Wishlist() {
             </motion.div>
             <div>
                 <Footer />
-            </div>
+            </div></>)}
+           
         </>
     )
 }

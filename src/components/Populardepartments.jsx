@@ -82,14 +82,14 @@ export default function Populardepartments() {
                   <Link to={`/product/${item.slug}`}>
                     <div className="product text-center">
                       <figure className="product-media" style={{ height: 250 }}>
-                        <a href="product-default.html">
-                          <img
-                            src={item.featured_image}
-                            alt="Product"
-                            style={{ width: "full", margin: "auto" }}
-                          />
 
-                        </a>
+                        <img
+                          src={item.featured_image}
+                          alt="Product"
+                          style={{ width: "full", margin: "auto" }}
+                        />
+
+
                         <div className="product-action-vertical">
                           <a
                             href="#"
@@ -101,16 +101,8 @@ export default function Populardepartments() {
                             className="btn-product-icon btn-wishlist w-icon-heart"
                             title="Add to wishlist"
                           />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-quickview w-icon-search"
-                            title="Quickview"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                          />
+                           
+                           
                         </div>
                       </figure>
                       <div className="product-details">
@@ -127,7 +119,10 @@ export default function Populardepartments() {
                           </a>
                         </div>
                         <div className="product-price">
-                          <ins className="new-price">{item.sale_price}</ins>
+                          <ins className="new-price"> {Intl.NumberFormat("en-US", {
+                            style: "currency",
+                            currency: "INR",
+                          }).format(item.sale_price)}</ins>
                         </div>
                       </div>
                     </div>

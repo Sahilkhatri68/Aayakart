@@ -80,7 +80,7 @@ export default function Product() {
          featured_image: product.featured_image,
        })
        .then((res) => {
-         console(res.data);
+         console.log(res.data);
          setCart(res.data);
          alert("Item added");
        });

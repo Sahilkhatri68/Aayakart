@@ -20,7 +20,7 @@ export default function Login() {
     const [username, setusername] = useState("");
     const [password, setPassword] = useState("");
 
-    const UserLogin = () => {
+    async function UserLogin() {
         axios
             .post(
                 `https://ayakart.dauqu.com/api/login`,
@@ -109,7 +109,7 @@ export default function Login() {
                                             Log In
                                         </button>
                                     </div>
-                                     
+
                                 </div>
                                 <p className="text-center">Sign in with social account</p>
                                 <div className="social-icons social-icon-border-color d-flex justify-content-center">

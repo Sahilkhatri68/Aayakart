@@ -18,43 +18,38 @@ export default function Myaccount() {
     }, [])
 
 
-    async function GetUsers() {
+ 
+    const [users, setUsers] = useState([])
+    async function Getuser() {
         try {
-            const response = await axios.get("https://ayakart.dauqu.com/api/profile", {
+            const resp = await axios.get("https://ayakart.dauqu.com/api/profile", {
                 withCredentials: true,
             });
-            setUser(response.data);
-            console.log(response.data);
+            setUsers(resp.data);
+            console.log(resp.data);
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
     }
-    React.useEffect(() => {
-        GetUsers();
-    }, []);
+    useEffect(() => {
+        Getuser();
+    }, [])
 
-    const [user, setUser] = useState([]);
-    console.log(user)
-    // checking user
+
+    // check user 
     async function CheckUser() {
         try {
-            const resp = await axios.post(
-                `https://ayakart.dauqu.com/api/login/checklogin`,
-                {
-                    withCredentials: true,
-                }
-            );
+            const resp = await axios.post("https://ayakart.dauqu.com/api/profile", {
+                withCredentials: true,
+            });
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
     }
-    React.useEffect(() => {
-        CheckUser();
-    }, []);
 
     return (
         <>
-            {user.length === 0 ? (<> <Emptycart /> </>) : (<><div>
+            {users.length === 0 ? (<> <Emptycart /> </>) : (<><div>
                 <Mainheader />
             </div>
                 <motion.div
@@ -123,17 +118,17 @@ export default function Myaccount() {
                                         <div className="tab-pane active in" id="account-dashboard">
                                             <p className="greeting">
                                                 Hello &nbsp;
-                                                <span className="text-dark font-weight-bold"> {user.fname}</span>
+                                                <span className="text-dark font-weight-bold"> {users.fname}</span>
 
                                             </p>
                                             <p className="greeting">
                                                 Email &nbsp;
-                                                <span className="text-dark font-weight-bold">John Doe@gmail.com </span>
+                                                <span className="text-dark font-weight-bold">{users.email}</span>
 
                                             </p>
                                             <p className="greeting">
                                                 Phone_Number &nbsp;
-                                                <span className="text-dark font-weight-bold">548974513 </span>
+                                                <span className="text-dark font-weight-bold">{users.phone} </span>
 
                                             </p>
                                             <p className="greeting">
