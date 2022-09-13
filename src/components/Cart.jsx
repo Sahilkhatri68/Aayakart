@@ -374,13 +374,12 @@ export default function Cart() {
                                                         <label>Total</label>
                                                         <span className="ls-50">$100.00</span>
                                                     </div>
-                                                    <a
-                                                        href="#"
+                                                    <Link to="/checkout"
                                                         className="btn btn-block btn-dark btn-icon-right btn-rounded  btn-checkout"
                                                     >
                                                         Proceed to checkout
                                                         <i className="w-icon-long-arrow-right" />
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>

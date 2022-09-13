@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+    let navigate = useNavigate();
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -38,10 +40,13 @@ export default function Register() {
           .then(function (response) {
             console.log(response);
             alert("Account Created Successfuly")
+            navigate("/login", { replace: true });
           })
           .catch(function (error) {
             console.log(error);
             alert("User Already Exist / Missing Details");
+            navigate("/register", { replace: true });
+
           });
       };
     

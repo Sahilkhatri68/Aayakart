@@ -3,6 +3,7 @@ import Footer from './Footer'
 import Mainheader from './Mainheader'
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
 export default function Checkout() {
     const scrollToTop = () => {
         window.scrollTo({
@@ -565,12 +566,12 @@ export default function Checkout() {
                                                         </div>
                                                     </div>
                                                     <div className="form-group place-order pt-6">
-                                                        <button
+                                                        <Link to="/ordercomplete">   <button
                                                             type="submit"
                                                             className="btn btn-dark btn-block btn-rounded"
                                                         >
                                                             Place Order
-                                                        </button>
+                                                        </button></Link>
                                                     </div>
                                                 </div>
                                             </div>

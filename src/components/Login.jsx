@@ -4,8 +4,11 @@ import Footer from './Footer'
 import Mainheader from './Mainheader'
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    let navigate = useNavigate();
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -35,9 +38,11 @@ export default function Login() {
 
             .then(() => {
                 alert("Successfuly loged in ");
+                navigate("/", { replace: true });
             })
             .catch((e) => {
                 alert("invalid details");
+                navigate("/login", { replace: true });
             });
     };
     return (
