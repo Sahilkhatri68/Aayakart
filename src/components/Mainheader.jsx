@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import "./../assets/css/demo1.min.css"
 import "./../assets/css/style.min.css"
 import logo from "./../assets/images/logo.png"
@@ -10,8 +11,24 @@ import banr5 from "./../assets/images/menu/banner-5.jpg"
 import banr6 from "./../assets/images/menu/banner-6.jpg"
 import aayakartlogo from "./../assets/images/pages/akrtlogo.png";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 export default function Mainheader() {
+  const [user, setUser] = useState([])
+
+  async function GetUser() {
+    const resp = await axios.get(`https://ayakart.dauqu.com/api/profile`).then((resp) => {
+      setUser(resp.data)
+      console.log(resp.data)
+    })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+  useEffect(() => {
+    GetUser();
+  }, [])
+  // console.log("user"+user);
   return (
     <>
       <>
@@ -21,7 +38,7 @@ export default function Mainheader() {
             <div className="container">
               <div className="header-left">
                 <p className="welcome-msg">
-                  Welcome to Aayakart Online Store 
+                  Welcome to Aayakart Online Store
                 </p>
               </div>
               <div className="header-right">
@@ -82,12 +99,23 @@ export default function Mainheader() {
                   <i className="w-icon-account" />
                   Sign In
                 </Link>
-                <span className="delimiter d-lg-show">/</span>
-                <Link to="/register"
-                  className="ml-0 d-lg-show login register"
-                >
-                  Register
+                  <span className="delimiter d-lg-show">/</span>
+                  <Link to="/register"
+                    className="ml-0 d-lg-show login register"
+                  >
+                    Register
+                  </Link> 
+                {/* {user.length === null ? (<><Link to="/login" className="d-lg-show login sign-in">
+                  <i className="w-icon-account" />
+                  Sign In
                 </Link>
+                  <span className="delimiter d-lg-show">/</span>
+                  <Link to="/register"
+                    className="ml-0 d-lg-show login register"
+                  >
+                    Register
+                  </Link></>) : (<>  <i className="w-icon-account" /></>)} */}
+
               </div>
             </div>
           </div>

@@ -65,7 +65,6 @@ export default function Product() {
         GetProduct();
     }, []);
 
-
     // add to cart
     // posting item to cart
     const [cart, setCart] = useState([]);
@@ -86,6 +85,7 @@ export default function Product() {
                 console.log(res.data);
                 setCart(res.data);
                 alert("Item added");
+
             })
 
     }

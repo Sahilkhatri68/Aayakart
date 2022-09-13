@@ -38,11 +38,11 @@ export default function Login() {
 
             .then(() => {
                 alert("Successfuly loged in ");
-                navigate("/", { replace: true });
+                navigate("/");
             })
             .catch((e) => {
                 alert("invalid details");
-                navigate("/login", { replace: true });
+                navigate("/login");
             });
     };
     return (

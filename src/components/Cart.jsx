@@ -81,6 +81,7 @@ export default function Cart() {
 
     // remove from cart
     const { id } = useParams();
+    
     async function RemoveItem(id) {
         const res = await axios
             .delete(`https://ayakart.dauqu.com/api/cart/${id}`)
