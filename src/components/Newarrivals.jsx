@@ -23,7 +23,7 @@ export default function Newarrivals() {
     try {
       const response = await axios.get("https://ayakart.dauqu.com/api/products");
       setProduct(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
