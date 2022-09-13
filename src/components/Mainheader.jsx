@@ -21,7 +21,7 @@ export default function Mainheader() {
             <div className="container">
               <div className="header-left">
                 <p className="welcome-msg">
-                  Welcome to Wolmart Store message or remove it!
+                  Welcome to Aayakart Online Store 
                 </p>
               </div>
               <div className="header-right">
