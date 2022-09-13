@@ -106,9 +106,10 @@ export default function Newcollection() {
                       aria-label="1 / 4"
                       style={{ width: "268.667px", marginRight: 20 }}
                     >
-                      <div className="product-wrap product text-center">
-                        <figure className="product-media" style={{ height: 330 }}>
-                          <a href="product-default.html">
+                      <Link to={`/product/${item.slug}`}>
+                        <div className="product-wrap product text-center">
+                          <figure className="product-media" style={{ height: 330 }}>
+
                             <img
                               src={item.featured_image}
                               alt="Product"
@@ -116,103 +117,106 @@ export default function Newcollection() {
                               height={243}
                             />
 
-                          </a>
-                          <div className="product-action-vertical">
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"
-                            />
-                          </div>
-                          <div className="product-label-group">
-                            <label className="product-label label-discount">6% Off</label>
-                          </div>
-                        </figure>
-                        <div className="product-details">
-                          <h4 className="product-name">
-                            <a href="product-default.html">Professional Pixel Camera</a>
-                          </h4>
-                          <div className="ratings-container">
-                            <div className="ratings-full">
-                              <span className="ratings" style={{ width: "100%" }} />
-                              <span className="tooltiptext tooltip-top" />
+
+                            <div className="product-action-vertical">
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-cart w-icon-cart"
+                                title="Add to cart"
+                              />
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-wishlist w-icon-heart"
+                                title="Add to wishlist"
+                              />
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-quickview w-icon-search"
+                                title="Quickview"
+                              />
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-compare w-icon-compare"
+                                title="Add to Compare"
+                              />
                             </div>
-                            <a href="product-default.html" className="rating-reviews">
-                              (5 reviews)
-                            </a>
-                          </div>
-                          <div className="product-price">
-                            <ins className="new-price">$215.68</ins>
-                            <del className="old-price">$230.45</del>
+                            <div className="product-label-group">
+                              <label className="product-label label-discount">6% Off</label>
+                            </div>
+                          </figure>
+                          <div className="product-details">
+                            <h4 className="product-name">
+                              <a href="product-default.html">Professional Pixel Camera</a>
+                            </h4>
+                            <div className="ratings-container">
+                              <div className="ratings-full">
+                                <span className="ratings" style={{ width: "100%" }} />
+                                <span className="tooltiptext tooltip-top" />
+                              </div>
+                              <a href="product-default.html" className="rating-reviews">
+                                (5 reviews)
+                              </a>
+                            </div>
+                            <div className="product-price">
+                              <ins className="new-price">$215.68</ins>
+                              <del className="old-price">$230.45</del>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="product-wrap product text-center">
-                        <figure className="product-media" style={{ height: 330 }}>
-                          <a href="product-default.html">
+                      </Link>
+                      <Link to={`/product/${item.slug}`}>
+                        <div className="product-wrap product text-center">
+                          <figure className="product-media" style={{ height: 330 }}>
+
                             <img
                               src={item.featured_image}
                               alt="Product"
                               width={216}
                               height={243}
                             />
-                          </a>
-                          <div className="product-action-vertical">
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-cart w-icon-cart"
-                              title="Add to cart"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-wishlist w-icon-heart"
-                              title="Add to wishlist"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"
-                            />
-                          </div>
-                        </figure>
-                        <div className="product-details">
-                          <h4 className="product-name">
-                            <a href="product-default.html">Latest Speaker</a>
-                          </h4>
-                          <div className="ratings-container">
-                            <div className="ratings-full">
-                              <span className="ratings" style={{ width: "60%" }} />
-                              <span className="tooltiptext tooltip-top" />
+
+                            <div className="product-action-vertical">
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-cart w-icon-cart"
+                                title="Add to cart"
+                              />
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-wishlist w-icon-heart"
+                                title="Add to wishlist"
+                              />
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-quickview w-icon-search"
+                                title="Quickview"
+                              />
+                              <a
+                                href="#"
+                                className="btn-product-icon btn-compare w-icon-compare"
+                                title="Add to Compare"
+                              />
                             </div>
-                            <a href="product-default.html" className="rating-reviews">
-                              (3 reviews)
-                            </a>
-                          </div>
-                          <div className="product-price">
-                            <ins className="new-price">$250.68</ins>
+                          </figure>
+                          <div className="product-details">
+                            <h4 className="product-name">
+                              <a href="product-default.html">Latest Speaker</a>
+                            </h4>
+                            <div className="ratings-container">
+                              <div className="ratings-full">
+                                <span className="ratings" style={{ width: "60%" }} />
+                                <span className="tooltiptext tooltip-top" />
+                              </div>
+                              <a href="product-default.html" className="rating-reviews">
+                                (3 reviews)
+                              </a>
+                            </div>
+                            <div className="product-price">
+                              <ins className="new-price">$250.68</ins>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                   </>
                 )

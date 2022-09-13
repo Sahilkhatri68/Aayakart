@@ -64,27 +64,28 @@ export default function Product() {
 
 
     // add to cart
-   // posting item to cart
-   const [cart, setCart] = useState([]);
-   const [product_id, setProduct_id] = useState("");
-   const [price, setPrice] = useState("");
-   const [title, setTitle] = useState("");
-   const [featured_image, setFeatured_image] = useState("");
- 
-   async function AddItemToCart() {
-     await axios
-       .post(`https://ayakart.dauqu.com/api/cart`, {
-         product_id: product._id,
-         price: product.sale_price,
-         title: product.title,
-         featured_image: product.featured_image,
-       })
-       .then((res) => {
-         console.log(res.data);
-         setCart(res.data);
-         alert("Item added");
-       });
-   }
+    // posting item to cart
+    const [cart, setCart] = useState([]);
+    const [product_id, setProduct_id] = useState("");
+    const [price, setPrice] = useState("");
+    const [title, setTitle] = useState("");
+    const [featured_image, setFeatured_image] = useState("");
+
+    async function AddItemToCart() {
+        await axios
+            .post(`https://ayakart.dauqu.com/api/cart`, {
+                product_id: product._id,
+                price: product.sale_price,
+                title: product.title,
+                featured_image: product.featured_image,
+            })
+            .then((res) => {
+                console.log(res.data);
+                setCart(res.data);
+                alert("Item added");
+            })
+
+    }
     return (
         <motion.div
             initial={{ y: -10, opacity: 0 }}

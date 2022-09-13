@@ -38,7 +38,7 @@ export default function Newarrivals() {
     >
       <div className="title-link-wrapper pb-1 mb-4">
         <h2 className="title ls-normal mb-0">Clothing &amp; Apparel</h2>
-        <Link to ="/allproduct"
+        <Link to="/allproduct"
           href="shop-boxed-banner.html"
           className="font-size-normal font-weight-bold ls-25 mb-0"
         >
@@ -107,124 +107,127 @@ export default function Newarrivals() {
                     aria-label="1 / 4"
                     style={{ width: "291.5px", marginRight: 20 }}
                   >
-                    
-                    <div className="product-wrap product text-center">
-                      <figure className="product-media" style={{height:350}}>
-                        <a href="#">
+                    <Link to={`/product/${item.slug}`}>
+                      <div className="product-wrap product text-center">
+                        <figure className="product-media" style={{ height: 350 }}>
+
                           <img
                             src={item.featured_image}
                             alt="Product"
                             width={216}
                             height={243}
                           />
-                        </a>
-                        <div className="product-action-vertical">
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-cart w-icon-cart"
-                            title="Add to cart"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-wishlist w-icon-heart"
-                            title="Add to wishlist"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-quickview w-icon-search"
-                            title="Quickview"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                          />
-                        </div>
-                      </figure>
-                      <div className="product-details">
-                        <h4 className="product-name">
-                          <a href="product-default.html">Men’s Clothing</a>
-                        </h4>
-                        <div className="ratings-container">
-                          <div className="ratings-full">
-                            <span className="ratings" style={{ width: "60%" }} />
-                            <span className="tooltiptext tooltip-top" />
+
+                          <div className="product-action-vertical">
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-cart w-icon-cart"
+                              title="Add to cart"
+                            />
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-wishlist w-icon-heart"
+                              title="Add to wishlist"
+                            />
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-quickview w-icon-search"
+                              title="Quickview"
+                            />
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-compare w-icon-compare"
+                              title="Add to Compare"
+                            />
                           </div>
-                          <a href="product-default.html" className="rating-reviews">
-                            (3 reviews)
-                          </a>
-                        </div>
-                        <div className="product-price">
-                        <ins className="new-price">{Intl.NumberFormat("en-US", {
-                                                    style: "currency",
-                                                    currency: "INR",
-                                                }).format(item.sale_price)}</ins>
-                          <del className="old-price">{Intl.NumberFormat("en-US", {
-                                                    style: "currency",
-                                                    currency: "INR",
-                                                }).format(item.regular_price)}</del>
+                        </figure>
+                        <div className="product-details">
+                          <h4 className="product-name">
+                            <a href="product-default.html">Men’s Clothing</a>
+                          </h4>
+                          <div className="ratings-container">
+                            <div className="ratings-full">
+                              <span className="ratings" style={{ width: "60%" }} />
+                              <span className="tooltiptext tooltip-top" />
+                            </div>
+                            <a href="product-default.html" className="rating-reviews">
+                              (3 reviews)
+                            </a>
+                          </div>
+                          <div className="product-price">
+                            <ins className="new-price">{Intl.NumberFormat("en-US", {
+                              style: "currency",
+                              currency: "INR",
+                            }).format(item.sale_price)}</ins>
+                            <del className="old-price">{Intl.NumberFormat("en-US", {
+                              style: "currency",
+                              currency: "INR",
+                            }).format(item.regular_price)}</del>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="product-wrap product text-center">
-                      <figure className="product-media"  style={{height:350}}>
-                        <a href="#">
+                    </Link>
+                    <Link to={`/product/${item.slug}`}>
+                      <div className="product-wrap product text-center">
+                        <figure className="product-media" style={{ height: 350 }}>
+
                           <img
                             src={item.featured_image}
                             alt="Product"
                             width={216}
                             height={243}
                           />
-                          
-                        </a>
-                        <div className="product-action-vertical">
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-cart w-icon-cart"
-                            title="Add to cart"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-wishlist w-icon-heart"
-                            title="Add to wishlist"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-quickview w-icon-search"
-                            title="Quickview"
-                          />
-                          <a
-                            href="#"
-                            className="btn-product-icon btn-compare w-icon-compare"
-                            title="Add to Compare"
-                          />
-                        </div>
-                      </figure>
-                      <div className="product-details">
-                        <h4 className="product-name">
-                          <a href="product-default.html">Best Travel Bag</a>
-                        </h4>
-                        <div className="ratings-container">
-                          <div className="ratings-full">
-                            <span className="ratings" style={{ width: "60%" }} />
-                            <span className="tooltiptext tooltip-top" />
+
+
+                          <div className="product-action-vertical">
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-cart w-icon-cart"
+                              title="Add to cart"
+                            />
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-wishlist w-icon-heart"
+                              title="Add to wishlist"
+                            />
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-quickview w-icon-search"
+                              title="Quickview"
+                            />
+                            <a
+                              href="#"
+                              className="btn-product-icon btn-compare w-icon-compare"
+                              title="Add to Compare"
+                            />
                           </div>
-                          <a href="product-default.html" className="rating-reviews">
-                            (3 reviews)
-                          </a>
-                        </div>
-                        <div className="product-price">
-                          <ins className="new-price">{Intl.NumberFormat("en-US", {
-                                                    style: "currency",
-                                                    currency: "INR",
-                                                }).format(item.sale_price)}</ins>
-                          <del className="old-price">{Intl.NumberFormat("en-US", {
-                                                    style: "currency",
-                                                    currency: "INR",
-                                                }).format(item.regular_price)}</del>
+                        </figure>
+                        <div className="product-details">
+                          <h4 className="product-name">
+                            <a href="product-default.html">Best Travel Bag</a>
+                          </h4>
+                          <div className="ratings-container">
+                            <div className="ratings-full">
+                              <span className="ratings" style={{ width: "60%" }} />
+                              <span className="tooltiptext tooltip-top" />
+                            </div>
+                            <a href="product-default.html" className="rating-reviews">
+                              (3 reviews)
+                            </a>
+                          </div>
+                          <div className="product-price">
+                            <ins className="new-price">{Intl.NumberFormat("en-US", {
+                              style: "currency",
+                              currency: "INR",
+                            }).format(item.sale_price)}</ins>
+                            <del className="old-price">{Intl.NumberFormat("en-US", {
+                              style: "currency",
+                              currency: "INR",
+                            }).format(item.regular_price)}</del>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 </>)
               })}

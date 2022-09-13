@@ -15,41 +15,43 @@ export default function Myaccount() {
             behavior: "smooth",
         });
     };
-    useEffect(() => {
-        scrollToTop();
-    }, [])
 
 
 
-    const [users, setUsers] = useState([])
-    async function Getuser() {
+    const [users, setUsers] = useState("");
+    console.log(users)
+    async function GetUsers() {
         try {
-            const resp = await axios.get("https://ayakart.dauqu.com/api/profile", {
+            const response = await axios.get("https://ayakart.dauqu.com/api/profile", {
                 withCredentials: true,
             });
-            setUsers(resp.data);
-            console.log(resp.data);
+            setUsers(response.data);
+            console.log(response.data);
+
+
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
-    useEffect(() => {
-        Getuser();
-    }, [])
 
 
-    // check user 
+    // checking user
     async function CheckUser() {
         try {
-            const resp = await axios.post("https://ayakart.dauqu.com/api/profile", {
-                withCredentials: true,
-            });
+            const resp = await axios.post(
+                `https://ayakart.dauqu.com/api/login/checklogin`,
+                {
+                    withCredentials: true,
+                }
+            ).then((resp) => {
+                console.log(resp.data)
+            })
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
-    //       // logout funtion--------------------
+    // logout funtion--------------------
     async function UserLogut() {
         try {
             const resp = await axios.get("https://ayakart.dauqu.com/api/login/logout", {
@@ -57,14 +59,17 @@ export default function Myaccount() {
             });
             console.log(resp.data);
             console.log("logout done");
-            navigate("/", { replace: true });
-            // navigate("/");
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
     }
-    //   console.warn(user + " user");
-
+    console.warn(users + " user");
+    React.useEffect(() => {
+        GetUsers();
+        CheckUser();
+    }, []);
+    console.log(users);
     return (
         <>
             {users.length === 0 ? (<> <Emptycart /> </>) : (<><div>

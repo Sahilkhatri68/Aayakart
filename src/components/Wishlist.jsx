@@ -20,254 +20,233 @@ export default function Wishlist() {
     }, [])
 
 
-    // checking usere------------
 
-    async function GetUsers() {
-        try {
-            const response = await axios.get("https://ayakart.dauqu.com/api/profile", {
-                withCredentials: true,
-            });
-            setUser(response.data);
-            console.log(response.data);
-        } catch (error) {
-            console.log(error);
-        }
+    // getting data
+    const [product, setProduct] = useState([]);
+    async function GetData(slug) {
+        const res = await axios.get(`https://ayakart.dauqu.com/api/cart`);
+        setProduct(res.data);
+        // GetData();
+
+        console.log(res.data);
     }
-    React.useEffect(() => {
-        GetUsers();
+    useEffect(() => {
+        GetData();
     }, []);
 
-    const [user, setUser] = useState([]);
-    console.log(user)
-    // checking user
-    async function CheckUser() {
-        try {
-            const resp = await axios.post(
-                `https://ayakart.dauqu.com/api/login/checklogin`,
-                {
-                    withCredentials: true,
-                }
-            );
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    React.useEffect(() => {
-        CheckUser();
-    }, []);
     return (
         <>
-        {user.length == 0 ? (<><Emptycart/></>):(<> 
-        <div>
-                <Mainheader />
-            </div>
-            <motion.div
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
-                transition={{ duration: 0.2, stiffness: 500 }}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                }}>
-                <main className="main wishlist-page">
-                    {/* Start of Page Header */}
-                    <div className="page-header">
-                        <div className="container">
-                            <h1 className="page-title mb-0">Wishlist</h1>
+            {product.length === 0 ? (<><Emptycart /></>) : (<>
+                <div>
+                    <Mainheader />
+                </div>
+                <motion.div
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.2, stiffness: 500 }}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                    }}>
+                    <main className="main wishlist-page">
+                        {/* Start of Page Header */}
+                        <div className="page-header">
+                            <div className="container">
+                                <h1 className="page-title mb-0">Wishlist</h1>
+                            </div>
                         </div>
-                    </div>
-                    {/* End of Page Header */}
-                    {/* Start of Breadcrumb */}
-                    <nav className="breadcrumb-nav mb-10">
-                        <div className="container">
-                            <ul className="breadcrumb">
-                                <li>
-                                    <a href="demo1.html">Home</a>
-                                </li>
-                                <li>Wishlist</li>
-                            </ul>
-                        </div>
-                    </nav>
-                    {/* End of Breadcrumb */}
-                    {/* Start of PageContent */}
-                    <div className="page-content">
-                        <div className="container">
-                            <h3 className="wishlist-title">My wishlist</h3>
-                            <table className="shop-table wishlist-table">
-                                <thead>
-                                    <tr>
-                                        <th className="product-name">
-                                            <span>Product</span>
-                                        </th>
-                                        <th />
-                                        <th className="product-price">
-                                            <span>Price</span>
-                                        </th>
-                                        <th className="product-stock-status">
-                                            <span>Stock Status</span>
-                                        </th>
-                                        <th className="wishlist-action">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td className="product-thumbnail">
-                                            <div className="p-relative">
-                                                <a href="product-default.html">
-                                                    <figure>
-                                                        <img
-                                                            src={whs}
-                                                            alt="product"
-                                                            width={300}
-                                                            height={338}
-                                                        />
-                                                    </figure>
-                                                </a>
-                                                <button type="submit" className="btn btn-close">
-                                                    <i className="fas fa-times" />
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td className="product-name">
-                                            <a href="product-default.html">Blue Sky Trunk</a>
-                                        </td>
-                                        <td className="product-price">
-                                            <ins className="new-price">$85.00</ins>
-                                        </td>
-                                        <td className="product-stock-status">
-                                            <span className="wishlist-in-stock">In Stock</span>
-                                        </td>
-                                        <td className="wishlist-action">
-                                            <div className="d-lg-flex">
-                                                <a
-                                                    href="#"
-                                                    className="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
-                                                >
-                                                    Quick View
-                                                </a>
-                                                <a
-                                                    href="#"
-                                                    className="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
-                                                >
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="product-thumbnail">
-                                            <div className="p-relative">
-                                                <a href="product-default.html">
-                                                    <figure>
-                                                        <img
-                                                            src={whs2}
-                                                            alt="product"
-                                                            width={300}
-                                                            height={338}
-                                                        />
-                                                    </figure>
-                                                </a>
-                                                <button type="submit" className="btn btn-close">
-                                                    <i className="fas fa-times" />
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td className="product-name">
-                                            <a href="product-default.html">Handmade Ring</a>
-                                        </td>
-                                        <td className="product-price">
-                                            <ins className="new-price">$5.00</ins>
-                                        </td>
-                                        <td className="product-stock-status">
-                                            <span className="wishlist-in-stock">In Stock</span>
-                                        </td>
-                                        <td className="wishlist-action">
-                                            <div className="d-lg-flex">
-                                                <a
-                                                    href="#"
-                                                    className="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
-                                                >
-                                                    Quick View
-                                                </a>
-                                                <a
-                                                    href="#"
-                                                    className="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
-                                                >
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="product-thumbnail">
-                                            <div className="p-relative">
-                                                <a href="product-default.html">
-                                                    <figure>
-                                                        <img
-                                                            src={whs3}
-                                                            alt="product"
-                                                            width={300}
-                                                            height={338}
-                                                        />
-                                                    </figure>
-                                                </a>
-                                                <button type="submit" className="btn btn-close">
-                                                    <i className="fas fa-times" />
-                                                </button>
-                                            </div>
-                                        </td>
-                                        <td className="product-name">
-                                            <a href="product-default.html">Pencil Case</a>
-                                        </td>
-                                        <td className="product-price">
-                                            <ins className="new-price">$54.00</ins>
-                                        </td>
-                                        <td className="product-stock-status">
-                                            <span className="wishlist-in-stock">In Stock</span>
-                                        </td>
-                                        <td className="wishlist-action">
-                                            <div className="d-lg-flex">
-                                                <a
-                                                    href="#"
-                                                    className="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
-                                                >
-                                                    Quick View
-                                                </a>
-                                                <a
-                                                    href="#"
-                                                    className="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
-                                                >
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div className="social-links">
-                                <label>Share On:</label>
-                                <div className="social-icons social-no-color border-thin">
-                                    <a href="#" className="social-icon social-facebook w-icon-facebook" />
-                                    <a href="#" className="social-icon social-twitter w-icon-twitter" />
-                                    <a
-                                        href="#"
-                                        className="social-icon social-pinterest w-icon-pinterest"
-                                    />
-                                    <a href="#" className="social-icon social-email far fa-envelope" />
-                                    <a href="#" className="social-icon social-whatsapp fab fa-whatsapp" />
+                        {/* End of Page Header */}
+                        {/* Start of Breadcrumb */}
+                        <nav className="breadcrumb-nav mb-10">
+                            <div className="container">
+                                <ul className="breadcrumb">
+                                    <li>
+                                        <a href="demo1.html">Home</a>
+                                    </li>
+                                    <li>Wishlist</li>
+                                </ul>
+                            </div>
+                        </nav>
+                        {/* End of Breadcrumb */}
+                        {/* Start of PageContent */}
+                        <div className="page-content">
+                            <div className="container">
+                                <h3 className="wishlist-title">My wishlist</h3>
+                                <table className="shop-table wishlist-table">
+                                    <thead>
+                                        <tr>
+                                            <th className="product-name">
+                                                <span>Product</span>
+                                            </th>
+                                            <th />
+                                            <th className="product-price">
+                                                <span>Price</span>
+                                            </th>
+                                            <th className="product-stock-status">
+                                                <span>Stock Status</span>
+                                            </th>
+                                            <th className="wishlist-action">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className="product-thumbnail">
+                                                <div className="p-relative">
+                                                    <a href="product-default.html">
+                                                        <figure>
+                                                            <img
+                                                                src={whs}
+                                                                alt="product"
+                                                                width={300}
+                                                                height={338}
+                                                            />
+                                                        </figure>
+                                                    </a>
+                                                    <button type="submit" className="btn btn-close">
+                                                        <i className="fas fa-times" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td className="product-name">
+                                                <a href="product-default.html">Blue Sky Trunk</a>
+                                            </td>
+                                            <td className="product-price">
+                                                <ins className="new-price">$85.00</ins>
+                                            </td>
+                                            <td className="product-stock-status">
+                                                <span className="wishlist-in-stock">In Stock</span>
+                                            </td>
+                                            <td className="wishlist-action">
+                                                <div className="d-lg-flex">
+                                                    <a
+                                                        href="#"
+                                                        className="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
+                                                    >
+                                                        Quick View
+                                                    </a>
+                                                    <a
+                                                        href="#"
+                                                        className="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
+                                                    >
+                                                        Add to cart
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td className="product-thumbnail">
+                                                <div className="p-relative">
+                                                    <a href="product-default.html">
+                                                        <figure>
+                                                            <img
+                                                                src={whs2}
+                                                                alt="product"
+                                                                width={300}
+                                                                height={338}
+                                                            />
+                                                        </figure>
+                                                    </a>
+                                                    <button type="submit" className="btn btn-close">
+                                                        <i className="fas fa-times" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td className="product-name">
+                                                <a href="product-default.html">Handmade Ring</a>
+                                            </td>
+                                            <td className="product-price">
+                                                <ins className="new-price">$5.00</ins>
+                                            </td>
+                                            <td className="product-stock-status">
+                                                <span className="wishlist-in-stock">In Stock</span>
+                                            </td>
+                                            <td className="wishlist-action">
+                                                <div className="d-lg-flex">
+                                                    <a
+                                                        href="#"
+                                                        className="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
+                                                    >
+                                                        Quick View
+                                                    </a>
+                                                    <a
+                                                        href="#"
+                                                        className="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
+                                                    >
+                                                        Add to cart
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td className="product-thumbnail">
+                                                <div className="p-relative">
+                                                    <a href="product-default.html">
+                                                        <figure>
+                                                            <img
+                                                                src={whs3}
+                                                                alt="product"
+                                                                width={300}
+                                                                height={338}
+                                                            />
+                                                        </figure>
+                                                    </a>
+                                                    <button type="submit" className="btn btn-close">
+                                                        <i className="fas fa-times" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td className="product-name">
+                                                <a href="product-default.html">Pencil Case</a>
+                                            </td>
+                                            <td className="product-price">
+                                                <ins className="new-price">$54.00</ins>
+                                            </td>
+                                            <td className="product-stock-status">
+                                                <span className="wishlist-in-stock">In Stock</span>
+                                            </td>
+                                            <td className="wishlist-action">
+                                                <div className="d-lg-flex">
+                                                    <a
+                                                        href="#"
+                                                        className="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0"
+                                                    >
+                                                        Quick View
+                                                    </a>
+                                                    <a
+                                                        href="#"
+                                                        className="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart"
+                                                    >
+                                                        Add to cart
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div className="social-links">
+                                    <label>Share On:</label>
+                                    <div className="social-icons social-no-color border-thin">
+                                        <a href="#" className="social-icon social-facebook w-icon-facebook" />
+                                        <a href="#" className="social-icon social-twitter w-icon-twitter" />
+                                        <a
+                                            href="#"
+                                            className="social-icon social-pinterest w-icon-pinterest"
+                                        />
+                                        <a href="#" className="social-icon social-email far fa-envelope" />
+                                        <a href="#" className="social-icon social-whatsapp fab fa-whatsapp" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    {/* End of PageContent */}
-                </main>
+                        {/* End of PageContent */}
+                    </main>
 
-            </motion.div>
-            <div>
-                <Footer />
-            </div></>)}
-           
+                </motion.div>
+                <div>
+                    <Footer />
+                </div></>)}
+
         </>
     )
 }
