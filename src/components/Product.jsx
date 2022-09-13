@@ -56,7 +56,10 @@ export default function Product() {
             .then((response) => {
                 setProduct(response.data);
                 console.log(response.data);
-            });
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
     useEffect(() => {
         GetProduct();
