@@ -43,9 +43,7 @@ export default function Cart() {
         GetData();
     }, []);
 
-    async function btncheck() {
-        // e.target.value
-    }
+   
 
     //   check user--------------------
     // async function GetUsers() {
@@ -83,6 +81,8 @@ export default function Cart() {
     // }, []);
 
     // remove from cart
+
+
     const { id } = useParams();
 
     async function RemoveItem(id) {
@@ -104,9 +104,12 @@ export default function Cart() {
 
 
     // add quantity of cart product -----------
-    async function addQuantity(_id, newQuantity) {
+        const [items, setItems] = useState();
+        async function handleIncrement() {
 
-    }
+        
+        }
+    
     return (
 
         <>
@@ -198,7 +201,7 @@ export default function Cart() {
                                                             </td>
                                                             <td className="product-quantity">
                                                                 <div className="input-group">
-                                                                    <button className="quantity-plus w-icon-plus"  />
+                                                                    <button className="quantity-plus w-icon-plus" onClick={()=>handleIncrement()}  />
                                                                     <button className="quantity-minus w-icon-minus"  />
                                                                 </div>
                                                             </td>
