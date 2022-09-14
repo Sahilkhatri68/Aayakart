@@ -52,10 +52,10 @@ function Allproduct() {
                         <div className="container">
                             <ul className="breadcrumb bb-no">
                                 <li>
-                                    <a href="demo1.html">Home</a>
+                                    <a href="#">Home</a>
                                 </li>
                                 <li>
-                                    <a href="shop-banner-sidebar.html">Shop</a>
+                                    <a href="#">Shop</a>
                                 </li>
                                 <li>Boxed</li>
                             </ul>
@@ -290,7 +290,7 @@ function Allproduct() {
                                                 Smart Watches
                                             </h3>
                                             <a
-                                                href="shop-banner-sidebar.html"
+                                                href="#"
                                                 className="btn btn-dark btn-rounded btn-icon-right"
                                             >
                                                 Discover Now
@@ -336,12 +336,12 @@ function Allproduct() {
                                             </div>
                                             <div className="toolbox-item toolbox-layout">
                                                 <a
-                                                    href="shop-boxed-banner.html"
+                                                    href="#"
                                                     className="icon-mode-grid btn-layout active"
                                                 >
                                                     <i className="w-icon-grid" />
                                                 </a>
-                                                <a href="shop-list.html" className="icon-mode-list btn-layout">
+                                                <a href="#" className="icon-mode-list btn-layout">
                                                     <i className="w-icon-list" />
                                                 </a>
                                             </div>
@@ -399,7 +399,7 @@ function Allproduct() {
                                                                             <span className="tooltiptext tooltip-top" />
                                                                         </div>
                                                                         <a
-                                                                            href="https://www.portotheme.com/html/wolmart/product.html"
+                                                                            href="#"
                                                                             className="rating-reviews"
                                                                         >
                                                                             (3 reviews)

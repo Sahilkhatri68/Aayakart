@@ -54,7 +54,7 @@ export default function Footer() {
             <div className="row">
               <div className="col-lg-4 col-sm-6">
                 <div className="widget widget-about">
-                  <a href="demo1.html" className="logo-footer">
+                  <a href="#" className="logo-footer">
                     <img
                       src={flogo}
                       alt="logo-footer"
@@ -129,16 +129,16 @@ export default function Footer() {
                       <a href="#">Track My Order</a>
                     </li>
                     <li>
-                      <a href="cart.html">View Cart</a>
+                      <a href="#">View Cart</a>
                     </li>
                     <li>
-                      <a href="login.html">Sign In</a>
+                      <a href="#">Sign In</a>
                     </li>
                     <li>
                       <a href="#">Help</a>
                     </li>
                     <li>
-                      <a href="wishlist.html">My Wishlist</a>
+                      <a href="#">My Wishlist</a>
                     </li>
                     <li>
                       <a href="#">Privacy Policy</a>

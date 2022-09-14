@@ -70,7 +70,7 @@ export default function Introsection() {
                                         <span className="font-weight-bolder text-secondary">30% OFF</span>
                                     </p>
                                     <a
-                                        href="shop-list.html"
+                                        href="#"
                                         className="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                                         data-animation-options="{
                               'name': 'fadeInRightShorter',
@@ -143,7 +143,7 @@ export default function Introsection() {
                                         Only until the end of this week.
                                     </p>
                                     <a
-                                        href="shop-banner-sidebar.html"
+                                        href="#"
                                         className="btn btn-dark btn-outline btn-rounded btn-icon-right slide-animate"
                                         data-animation-options="{
                                   'name': 'fadeInUpShorter',
@@ -224,7 +224,7 @@ export default function Introsection() {
                               }"
                                     >
                                         <a
-                                            href="shop-list.html"
+                                            href="#"
                                             className="btn btn-dark btn-outline btn-rounded btn-icon-right"
                                         >
                                             SHOP NOW

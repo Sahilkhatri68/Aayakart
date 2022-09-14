@@ -1146,13 +1146,13 @@ export default function Mainheader() {
                             <a href="element-testimonials.html">Testimonials</a>
                           </li>
                           <li>
-                            <a href="element-titles.html">Titles</a>
+                            <a href="#">Titles</a>
                           </li>
                           <li>
-                            <a href="element-typography.html">Typography</a>
+                            <a href="#">Typography</a>
                           </li>
                           <li>
-                            <a href="element-vendors.html">Vendors</a>
+                            <a href="f">Vendors</a>
                           </li>
                         </ul>
                       </li>

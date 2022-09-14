@@ -44,7 +44,7 @@ export default function Cart() {
     }, []);
 
     async function btncheck() {
-        alert("working")
+        // e.target.value
     }
 
     //   check user--------------------
@@ -104,8 +104,8 @@ export default function Cart() {
 
 
     // add quantity of cart product -----------
-    async function addQuantity(_id,newQuantity) {
-            
+    async function addQuantity(_id, newQuantity) {
+
     }
     return (
 
@@ -198,8 +198,8 @@ export default function Cart() {
                                                             </td>
                                                             <td className="product-quantity">
                                                                 <div className="input-group">
-                                                                    <button className="quantity-plus w-icon-plus" onClick={()=>btncheck()} />
-                                                                    <button className="quantity-minus w-icon-minus" onClick={()=>btncheck()}/>
+                                                                    <button className="quantity-plus w-icon-plus"  />
+                                                                    <button className="quantity-minus w-icon-minus"  />
                                                                 </div>
                                                             </td>
                                                             <td className="product-subtotal">
@@ -258,7 +258,7 @@ export default function Cart() {
                                                 }}
                                             >
                                                 <div className="cart-summary mb-4">
-                                                    <h3 className="cart-title text-uppercase">Cart Totals</h3>
+                                                    <h3 className="cart-title text-uppercase">Cart Total ITEMS - {product.length} </h3> 
                                                     <div className="cart-subtotal d-flex align-items-center justify-content-between">
                                                         <label className="ls-25">Subtotal</label>
                                                         <span>$100.00</span>

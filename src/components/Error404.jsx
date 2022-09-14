@@ -17,7 +17,7 @@ export default function Error404() {
                         <div className="container">
                             <ul className="breadcrumb bb-no">
                                 <li>
-                                    <a href="demo1.html">Home</a>
+                                    <a href="#">Home</a>
                                 </li>
                                 <li>Error 404</li>
                             </ul>

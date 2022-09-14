@@ -33,13 +33,13 @@ export default function Checkout() {
                         <div className="container">
                             <ul className="breadcrumb shop-breadcrumb bb-no">
                                 <li className="passed">
-                                    <a href="cart.html">Shopping Cart</a>
+                                    <a href="#">Shopping Cart</a>
                                 </li>
                                 <li className="active">
-                                    <a href="checkout.html">Checkout</a>
+                                    <a href="#">Checkout</a>
                                 </li>
                                 <li>
-                                    <a href="order.html">Order Complete</a>
+                                    <a href="#">Order Complete</a>
                                 </li>
                             </ul>
                         </div>
