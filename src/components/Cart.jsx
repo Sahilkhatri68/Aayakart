@@ -43,6 +43,9 @@ export default function Cart() {
         GetData();
     }, []);
 
+    async function btncheck() {
+        alert("working")
+    }
 
     //   check user--------------------
     // async function GetUsers() {
@@ -81,7 +84,7 @@ export default function Cart() {
 
     // remove from cart
     const { id } = useParams();
-    
+
     async function RemoveItem(id) {
         const res = await axios
             .delete(`https://ayakart.dauqu.com/api/cart/${id}`)
@@ -97,6 +100,13 @@ export default function Cart() {
     useEffect(() => {
         RemoveItem(id);
     }, []);
+
+
+
+    // add quantity of cart product -----------
+    async function addQuantity(_id,newQuantity) {
+            
+    }
     return (
 
         <>
@@ -118,13 +128,13 @@ export default function Cart() {
                             <div className="container">
                                 <ul className="breadcrumb shop-breadcrumb bb-no">
                                     <li className="active">
-                                        <a href="cart.html">Shopping Cart</a>
+                                        <a href="#">Shopping Cart</a>
                                     </li>
                                     <li>
-                                        <a href="checkout.html">Checkout</a>
+                                        <a href="#">Checkout</a>
                                     </li>
                                     <li>
-                                        <a href="order.html">Order Complete</a>
+                                        <a href="#">Order Complete</a>
                                     </li>
                                 </ul>
                             </div>
@@ -141,7 +151,10 @@ export default function Cart() {
                                                     <th className="product-name">
                                                         <span>Product</span>
                                                     </th>
-                                                    <th />
+                                                    <th className="product-title">
+                                                        <span>Title</span>
+                                                    </th>
+
                                                     <th className="product-price">
                                                         <span>Price</span>
                                                     </th>
@@ -159,7 +172,7 @@ export default function Cart() {
                                                         <><tr>
                                                             <td className="product-thumbnail">
                                                                 <div className="p-relative">
-                                                                    <a href="product-default.html">
+                                                                    <a href="#">
                                                                         <figure>
                                                                             <img
                                                                                 src={item.product_image}
@@ -175,7 +188,7 @@ export default function Cart() {
                                                                 </div>
                                                             </td>
                                                             <td className="product-name">
-                                                                <a href="product-default.html">{item.product_name}</a>
+                                                                <a href="#">{item.product_name}</a>
                                                             </td>
                                                             <td className="product-price">
                                                                 <span className="amount"> {Intl.NumberFormat("en-US", {
@@ -185,14 +198,8 @@ export default function Cart() {
                                                             </td>
                                                             <td className="product-quantity">
                                                                 <div className="input-group">
-                                                                    <input
-                                                                        className="quantity form-control"
-                                                                        type="number"
-                                                                        min={1}
-                                                                        max={100000}
-                                                                    />
-                                                                    <button className="quantity-plus w-icon-plus" />
-                                                                    <button className="quantity-minus w-icon-minus" />
+                                                                    <button className="quantity-plus w-icon-plus" onClick={()=>btncheck()} />
+                                                                    <button className="quantity-minus w-icon-minus" onClick={()=>btncheck()}/>
                                                                 </div>
                                                             </td>
                                                             <td className="product-subtotal">

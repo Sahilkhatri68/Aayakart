@@ -30,6 +30,9 @@ export default function Populardepartments() {
   React.useEffect(() => {
     Getproducts();
   }, []);
+
+
+
   return (
     <>
       <h2
@@ -101,8 +104,8 @@ export default function Populardepartments() {
                             className="btn-product-icon btn-wishlist w-icon-heart"
                             title="Add to wishlist"
                           />
-                           
-                           
+
+
                         </div>
                       </figure>
                       <div className="product-details">

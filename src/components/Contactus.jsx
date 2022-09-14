@@ -71,7 +71,7 @@ export default function Contactus() {
                                         </span>
                                         <div className="icon-box-content">
                                             <h4 className="icon-box-title">E-mail Address</h4>
-                                            <p>mail@example.com</p>
+                                            <p> AayakartprivateLimited@gmail.com</p>
                                         </div>
                                     </div>
                                     <div
@@ -99,7 +99,10 @@ export default function Contactus() {
                                         </span>
                                         <div className="icon-box-content">
                                             <h4 className="icon-box-title">Address</h4>
-                                            <p>Lawrence, NY 11345, USA</p>
+                                            <p>Main market Molekhal (Kapradhya)</p>
+                                            <p> Near State Bank ,Salt Almora</p>
+                                            <p> Uttrakhand , 263676</p>
+                                            <p>  India </p>
                                         </div>
                                     </div>
                                     <div

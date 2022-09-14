@@ -121,7 +121,7 @@ export default function Newarrivals() {
                           <div className="product-action-vertical">
                             <a
                               href="#"
-                              className="btn-product-icon btn-cart w-icon-cart"
+                              className="btn-product-icon btn-cart w-icon-cart"compare
                               title="Add to cart"
                             />
                             <a
@@ -129,16 +129,7 @@ export default function Newarrivals() {
                               className="btn-product-icon btn-wishlist w-icon-heart"
                               title="Add to wishlist"
                             />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"
-                            />
+                            
                           </div>
                         </figure>
                         <div className="product-details">
@@ -190,16 +181,7 @@ export default function Newarrivals() {
                               className="btn-product-icon btn-wishlist w-icon-heart"
                               title="Add to wishlist"
                             />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-quickview w-icon-search"
-                              title="Quickview"
-                            />
-                            <a
-                              href="#"
-                              className="btn-product-icon btn-compare w-icon-compare"
-                              title="Add to Compare"
-                            />
+                            
                           </div>
                         </figure>
                         <div className="product-details">

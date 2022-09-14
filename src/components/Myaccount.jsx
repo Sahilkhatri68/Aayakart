@@ -37,37 +37,37 @@ export default function Myaccount() {
 
     // checking user
     async function CheckUser() {
-        try {
-            const resp = await axios.post(
-                `https://ayakart.dauqu.com/api/login/checklogin`,
-                {
-                    withCredentials: true,
-                }
-            ).then((resp) => {
-                console.log(resp.data)
-            })
-        } catch (error) {
-            console.log(error);
-        }
+
+        const res = await axios.get(`https://ayakart.dauqu.com/api/login/checklogin`).then((res) => {
+            console.log(res.data)
+        }).catch((error) => {
+            console.log("Error in" + error)
+        })
     }
+    useEffect(() => {
+        CheckUser();
+    }, [])
 
     // logout funtion--------------------
-    async function UserLogut() {
-        try {
-            const resp = await axios.get("https://ayakart.dauqu.com/api/login/logout", {
-                withCredentials: true,
-            });
-            console.log(resp.data);
-            console.log("logout done");
-            navigate("/");
-        } catch (error) {
-            console.log(error);
-        }
+    async function Userlogout() {
+
+        const logout = await axios.get(`https://ayakart.dauqu.com/api/login/logout`, {
+            withCredentials: true
+        }).then((res) => {
+            console.log(res.data)
+            navigate("/", { replace: true })
+            console.log(res.data);
+
+        }).catch((error) => {
+            console.log(error)
+            navigate("/myaccount", { replace: true })
+        })
     }
+
     // console.warn(users + " user");
     React.useEffect(() => {
         GetUsers();
-        CheckUser();
+
     }, []);
     console.log(users);
     return (
@@ -234,7 +234,7 @@ export default function Myaccount() {
                                                         </div>
                                                     </a>
                                                 </div>
-                                                <button className="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4" style={{ border: "none" }} onClick={() => UserLogut()}>
+                                                <button className="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4" style={{ border: "none" }} onClick={() => Userlogout()}>
 
                                                     <div className="icon-box text-center">
                                                         <span className="icon-box-icon icon-logout">

@@ -19,7 +19,7 @@ export default function Mainheader() {
   async function GetUser() {
     const resp = await axios.get(`https://ayakart.dauqu.com/api/profile`).then((resp) => {
       setUser(resp.data)
-      console.log(resp.data)
+      // console.log(resp.data)
     })
       .catch((error) => {
         console.log(error)

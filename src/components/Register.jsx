@@ -7,6 +7,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+    const [isLoading, setIsLoading] = useState(false);
+
     let navigate = useNavigate();
     const scrollToTop = () => {
         window.scrollTo({
@@ -27,6 +29,7 @@ export default function Register() {
     const [location, setLocation] = useState("");
 
     const postdata = () => {
+        setIsLoading(true)
         axios
           .post("https://ayakart.dauqu.com/api/register", {
             fullName: fullname,
@@ -41,11 +44,13 @@ export default function Register() {
             console.log(response);
             alert("Account Created Successfuly")
             navigate("/login", { replace: true });
+            setIsLoading(false)
           })
           .catch(function (error) {
             console.log(error);
             alert("User Already Exist / Missing Details");
             navigate("/register", { replace: true });
+            setIsLoading(false)
 
           });
       };
@@ -152,7 +157,7 @@ export default function Register() {
                                         </div>
                                         
                                         <button className="btn btn-primary" onClick={() => postdata()}>
-                                            Sign In
+                                        {isLoading !== true ? "Signin" : ("Signing-In....") }
                                         </button>
                                     </div>
                                      

@@ -129,16 +129,7 @@ export default function Newcollection() {
                                 className="btn-product-icon btn-wishlist w-icon-heart"
                                 title="Add to wishlist"
                               />
-                              <a
-                                href="#"
-                                className="btn-product-icon btn-quickview w-icon-search"
-                                title="Quickview"
-                              />
-                              <a
-                                href="#"
-                                className="btn-product-icon btn-compare w-icon-compare"
-                                title="Add to Compare"
-                              />
+                              
                             </div>
                             <div className="product-label-group">
                               <label className="product-label label-discount">6% Off</label>
@@ -186,16 +177,7 @@ export default function Newcollection() {
                                 className="btn-product-icon btn-wishlist w-icon-heart"
                                 title="Add to wishlist"
                               />
-                              <a
-                                href="#"
-                                className="btn-product-icon btn-quickview w-icon-search"
-                                title="Quickview"
-                              />
-                              <a
-                                href="#"
-                                className="btn-product-icon btn-compare w-icon-compare"
-                                title="Add to Compare"
-                              />
+                              
                             </div>
                           </figure>
                           <div className="product-details">

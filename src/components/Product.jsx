@@ -30,7 +30,10 @@ import sp1 from "./../assets/images/shop/16.jpg"
 import sp2 from "./../assets/images/shop/17.jpg"
 import sp3 from "./../assets/images/shop/18.jpg"
 import axios from "axios";
-
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 export default function Product() {
     const scrollToTop = () => {
         window.scrollTo({
@@ -46,6 +49,7 @@ export default function Product() {
     // ---------
     const { slug } = useParams();
     // console.log(process.env.REACT_APP_BACKEND_URL);
+
 
 
     // getting data
@@ -85,10 +89,24 @@ export default function Product() {
                 console.log(res.data);
                 setCart(res.data);
                 alert("Item added");
-
+               
             })
 
     }
+
+    // snackbar-------------
+    // const [open, setOpen] = React.useState(false);
+
+    // const handleClick = () => {
+    //     setOpen(true);
+    // };
+    // const handleClose = (event, reason) => {
+    //     if (reason === 'clickaway') {
+    //         return;
+    //     }
+
+    //     setOpen(false);
+    // };
     return (
         <motion.div
             initial={{ y: -10, opacity: 0 }}
@@ -103,6 +121,7 @@ export default function Product() {
                 <Mainheader />
             </div>
             <div>
+              
                 <nav className="breadcrumb-nav container">
                     <ul className="breadcrumb bb-no">
                         <li>

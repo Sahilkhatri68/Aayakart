@@ -5,8 +5,14 @@ import Mainheader from './Mainheader'
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 export default function Login() {
+    // loading bar------
+    const [isLoading, setIsLoading] = useState(false);
+    const [disable, setDisable] = useState(false);
+
+    // loading bar------   
     let navigate = useNavigate();
 
     const scrollToTop = () => {
@@ -24,29 +30,32 @@ export default function Login() {
     const [password, setPassword] = useState("");
 
     async function UserLogin() {
-        axios
-            .post(
-                `https://ayakart.dauqu.com/api/login`,
-                {
-                    username: username,
-                    password: password,
-                },
-                {
-                    withCredentials: true,
-                }
-            )
+        setIsLoading(true)
 
-            .then(() => {
-                alert("Successfuly loged in ");
-                navigate("/");
-            })
+        const res = axios.post(`https://ayakart.dauqu.com/api/login`,
+            {
+                username: username,
+                password: password,
+            },
+            {
+                withCredentials: true,
+            }
+        ).then(() => {
+
+            alert("Successfuly loged in ");
+            navigate("/");
+            setIsLoading(false)
+        })
             .catch((e) => {
                 alert("invalid details");
                 navigate("/login");
+                setIsLoading(false)
+
             });
     };
     return (
-        <>
+        <div>
+   
             <div>
                 <Mainheader />
             </div>
@@ -110,8 +119,10 @@ export default function Login() {
                                             <label htmlFor="remember1">Remember me</label>
                                             <a href="#">Last your password?</a>
                                         </div>
-                                        <button className="btn btn-primary" onClick={() => UserLogin()}>
-                                            Log In
+
+
+                                        <button className="btn btn-primary" disabled={disable} onClick={() => UserLogin()}>
+                                            {isLoading !== true ? "Login" : ("Loading...") }
                                         </button>
                                     </div>
 
@@ -132,7 +143,7 @@ export default function Login() {
             <div>
                 <Footer />
             </div>
-        </>
+        </div>
     )
 }
 
