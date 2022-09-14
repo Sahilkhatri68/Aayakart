@@ -1,6 +1,7 @@
 .masterdiv {
     /* max-width: 1650px !important; */
     margin: auto;
+    width: 100%;
 }
 
 .insidecont {
