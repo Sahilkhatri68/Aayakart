@@ -10637,6 +10637,7 @@ body .product-popup {
 .product-media {
   position: relative;
   margin-bottom: 0;
+  background-color: #f5f5f5;
   -webkit-transition: -webkit-box-shadow 0.35s;
   transition: -webkit-box-shadow 0.35s;
   transition: box-shadow 0.35s;
