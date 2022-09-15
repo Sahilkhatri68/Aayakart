@@ -2460,9 +2460,7 @@ export default function Product() {
                                 <a className="sidebar-close" href="#">
                                     <i className="close-icon" />
                                 </a>
-                                <a href="#" className="sidebar-toggle d-flex d-lg-none">
-                                    <i className="fas fa-chevron-left" />
-                                </a>
+
                                 <div className="sidebar-content scrollable">
                                     <div className="pin-wrapper" style={{ height: "970.844px" }}>
                                         <div
