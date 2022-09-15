@@ -34,6 +34,7 @@ import Allproduct from "./components/Allproduct";
 import Aboutus from "./components/Aboutus";
 import Slider from "./components/Slider";
 import Cardslider from "./components/Cardslider";
+import Bannerslider from "./components/Bannerslider";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -59,9 +60,10 @@ function App() {
         <Route path="/slider" exact element={ <Slider/>}></Route>
         <Route path="/cardslider" exact element={ <Cardslider/>}></Route>
         <Route path="*" exact element={<Error404 />}></Route>
+        <Route path="/bannerslider" exact element={<Bannerslider />}></Route>
       </Routes>
     </div>
   );
 }
 
-export default App;
+export default App; 

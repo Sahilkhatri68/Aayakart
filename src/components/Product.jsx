@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import { motion } from "framer-motion"
 import Footer from './Footer'
 import Mainheader from './Mainheader'
@@ -89,7 +90,7 @@ export default function Product() {
                 console.log(res.data);
                 setCart(res.data);
                 alert("Item added");
-               
+
             })
 
     }
@@ -121,7 +122,7 @@ export default function Product() {
                 <Mainheader />
             </div>
             <div>
-              
+
                 <nav className="breadcrumb-nav container">
                     <ul className="breadcrumb bb-no">
                         <li>
@@ -169,7 +170,7 @@ export default function Product() {
                             <div className="main-content">
                                 <div className="product product-single row">
                                     <div className="col-md-6 mb-6">
-                                        <div className="product-gallery product-gallery-sticky">
+                                        {/* <div className="product-gallery product-gallery-sticky">
                                             <div
                                                 className="swiper-container product-single-swiper swiper-theme nav-inner swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events"
                                                 data-swiper-options="{
@@ -565,7 +566,30 @@ export default function Product() {
                                                     aria-atomic="true"
                                                 />
                                             </div>
-                                        </div>
+                                        </div> */}
+                                        <div style={{ width: 400 }}> <Carousel>
+                                            <div>
+                                                <img src={product.featured_image} />
+
+                                            </div>
+                                            <div>
+                                                <img src={product.featured_image}/>
+
+                                            </div>
+                                            <div>
+                                                <img src={product.featured_image} />
+
+                                            </div>
+                                            <div>
+                                                <img src={product.featured_image} />
+
+                                            </div>
+                                            <div>
+                                                <img src={product.featured_image} />
+
+                                            </div>
+
+                                        </Carousel></div>
                                     </div>
                                     <div className="col-md-6 mb-4 mb-md-6">
                                         <div
