@@ -567,13 +567,13 @@ export default function Product() {
                                                 />
                                             </div>
                                         </div> */}
-                                        <div style={{ width: 400 }}> <Carousel>
+                                        <div style={{ width: "auto" }}> <Carousel>
                                             <div>
                                                 <img src={product.featured_image} />
 
                                             </div>
                                             <div>
-                                                <img src={product.featured_image}/>
+                                                <img src={product.featured_image} />
 
                                             </div>
                                             <div>

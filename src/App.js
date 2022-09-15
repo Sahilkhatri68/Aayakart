@@ -35,6 +35,7 @@ import Aboutus from "./components/Aboutus";
 import Slider from "./components/Slider";
 import Cardslider from "./components/Cardslider";
 import Bannerslider from "./components/Bannerslider";
+import Multislide from "./components/Mulltislide";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -61,6 +62,7 @@ function App() {
         <Route path="/cardslider" exact element={ <Cardslider/>}></Route>
         <Route path="*" exact element={<Error404 />}></Route>
         <Route path="/bannerslider" exact element={<Bannerslider />}></Route>
+        <Route path="/multislide" exact element={<Multislide />}></Route>
       </Routes>
     </div>
   );
