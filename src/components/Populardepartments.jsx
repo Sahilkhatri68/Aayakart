@@ -84,7 +84,7 @@ export default function Populardepartments() {
                 <> <div className="product-wrap">
                   <Link to={`/product/${item.slug}`}>
                     <div className="product text-center">
-                      <figure className="product-media" style={{ height: 250 }}>
+                      <figure className="product-media"  >
 
                         <img
                           src={item.featured_image}

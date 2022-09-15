@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import InfiniteCarousel from 'react-leaf-carousel';
 
 import axios from "axios";
 import "./../assets/css/demo1.min.css";
@@ -109,7 +110,7 @@ export default function Newarrivals() {
                   >
                     <Link to={`/product/${item.slug}`}>
                       <div className="product-wrap product text-center">
-                        <figure className="product-media" style={{ height: 350 }}>
+                        <figure className="product-media"  >
 
                           <img
                             src={item.featured_image}
@@ -217,7 +218,7 @@ export default function Newarrivals() {
 
 
             </div>
-            <div
+            {/* <div
               className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
               style={{ display: "block" }}
             >
@@ -239,7 +240,7 @@ export default function Newarrivals() {
                 role="button"
                 aria-label="Go to slide 3"
               />
-            </div>
+            </div> */}
             <span
               className="swiper-notification"
               aria-live="assertive"

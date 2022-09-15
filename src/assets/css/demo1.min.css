@@ -9548,10 +9548,17 @@ body .product-popup {
 .product-media {
   position: relative;
   margin-bottom: 0;
+  height:280px;
   -webkit-transition: -webkit-box-shadow 0.35s;
   transition: -webkit-box-shadow 0.35s;
   transition: box-shadow 0.35s;
   transition: box-shadow 0.35s, -webkit-box-shadow 0.35s;
+}
+
+@media(max-width:550px) {
+  .product-media {
+    height: 200px;
+  }
 }
 
 .product-media img {
